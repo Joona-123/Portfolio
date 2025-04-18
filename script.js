@@ -9,6 +9,17 @@ themeToggle.addEventListener('click', () => {
 
 // Projektin tiedot
 const projectDetails = {
+  kuualus: {
+    title: 'Kuualuksen jalan simulointi',
+    description: 'FEM-analyysi kuualuksen laskeutumisjalan rakenteesta',
+    details: 'Tässä projektissa suunnittelin ja analysoin kuualuksen laskeutumisjalan rakennetta käyttäen FEM-analyysiä. Simulaatio sisälsi törmäystilanteen, materiaalin käyttäytymisen ja rakenteen optimoinnin.',
+    technologies: ['FEM', 'ANSYS', 'CAD', 'Materiaalitekniikka', 'Python'],
+    images: [
+      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    ],
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+  },
   metrover: {
     title: 'Metrover V2',
     description: 'Robottialustan ohjausjärjestelmän uudelleensuunnittelu (2025)',
@@ -124,72 +135,62 @@ const projectDetails = {
 // Projektin tietojen näyttäminen
 function showProjectDetails(projectId) {
   const project = projectDetails[projectId];
-  const modal = document.createElement('div');
-  modal.className = 'modal';
+  if (!project) return;
+
+  const modal = document.getElementById('projectModal');
+  const modalContent = document.querySelector('.modal-content');
   
-  // Kuvagalleria ja video HTML
-  let imagesHTML = '';
-  if (project.images && project.images.length > 0) {
-    imagesHTML = `
-      <div class="project-gallery">
-        ${project.images.map(img => `<img src="${img}" alt="${project.title}" class="project-image">`).join('')}
-      </div>
-    `;
-  }
+  // Estä sivuston skrollaus kun modaali on auki
+  document.body.style.overflow = 'hidden';
   
-  let videoHTML = '';
-  if (project.video) {
-    videoHTML = `
-      <div class="project-video">
-        <iframe width="100%" height="315" src="${project.video}" title="${project.title}" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    `;
-  }
-  
-  modal.innerHTML = `
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2>${project.title}</h2>
+  modalContent.innerHTML = `
+    <span class="close-modal">&times;</span>
+    <h2>${project.title}</h2>
+    <div class="project-details">
       <p>${project.description}</p>
-      
-      ${imagesHTML}
-      ${videoHTML}
-      
-      <div class="project-details">
-        <h3>Projektin kuvaus</h3>
-        <p>${project.details}</p>
-        <h3>Käytetyt teknologiat</h3>
-        <div class="tech-tags">
-          ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+      ${project.images ? `
+        <div class="project-gallery">
+          ${project.images.map(img => `
+            <img src="${img}" alt="${project.title}" class="project-image" onclick="openFullscreen(this)">
+          `).join('')}
         </div>
+      ` : ''}
+      ${project.video ? `
+        <div class="project-video">
+          <iframe src="${project.video}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      ` : ''}
+      <div class="tech-tags">
+        <h3>Käytetyt teknologiat:</h3>
+        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
       </div>
     </div>
   `;
 
-  document.body.appendChild(modal);
   modal.style.display = 'block';
 
-  // Lisää kuville klikkaustapahtumankäsittelijät
-  const projectImages = modal.querySelectorAll('.project-image');
-  projectImages.forEach(img => {
-    img.addEventListener('click', (e) => {
-      showFullscreenImage(e.target.src);
-    });
+  // Sulje modaali kun klikataan rastia
+  document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+  // Sulje modaali kun klikataan ulkopuolelle
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 
-  const closeBtn = modal.querySelector('.close-modal');
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-    setTimeout(() => modal.remove(), 300);
-  };
-
-  window.onclick = (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-      setTimeout(() => modal.remove(), 300);
+  // Sulje modaali ESC-näppäimellä
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeModal();
     }
-  };
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    // Palauta sivuston skrollaus kun modaali suljetaan
+    document.body.style.overflow = '';
+  }
 }
 
 // Kuvan näyttäminen koko näytöllä
