@@ -912,60 +912,53 @@ footer {
 @media (max-width: 768px) {
   .timeline-headers {
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 70px;
+    align-items: center;
+    padding-left: 0;
     gap: 30px;
-    margin-bottom: 0;
-    position: relative;
+    margin-bottom: 20px;
   }
   
   .timeline-header {
     width: auto;
-    text-align: left;
+    text-align: center;
     margin: 0;
     font-size: 1.8rem;
-    padding: 0;
-    position: absolute;
-    left: 70px;
   }
   
   .timeline-header.left {
     margin-right: 0;
-    margin-bottom: 0;
-    top: 0;
+    margin-bottom: 10px;
   }
   
   .timeline-header.right {
     margin-left: 0;
-    margin-top: 0;
-    top: 50%;
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
-  /* Rakenne uusiksi: ensin työkokemus, sitten koulutus */
   .timeline {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
-    padding-top: 50px;
   }
   
-  /* Aikajanat ovat nyt allekkain erillisinä viivoina */
-  .timeline::before {
+  .timeline::before, .timeline::after {
     left: 30px;
     width: 4px;
+  }
+  
+  .timeline::before {
+    top: 0;
     bottom: 50%;
-    top: 50px;
+    height: auto;
   }
   
   .timeline::after {
     left: 30px;
-    width: 4px;
     top: 50%;
     bottom: 0;
+    height: auto;
+    margin-top: 40px;
   }
   
-  /* Kaikki kohteet ovat nyt vasemmalla */
   .timeline-item {
     width: 100%;
     padding-left: 70px;
@@ -973,36 +966,35 @@ footer {
     margin-bottom: 30px;
   }
   
-  /* Oikean puolen kohteet siirretään myös vasemmalle */
-  .timeline-item.right {
-    left: 0;
+  .timeline-item.left {
+    order: 1;
   }
   
-  /* Kummankin puolen pallot vasemmalle */
-  .timeline-item.left::after, 
+  .timeline-item.right {
+    left: 0;
+    order: 2;
+    margin-top: 60px;
+  }
+  
+  .timeline-item.left::after {
+    left: 19px;
+    right: auto;
+  }
+  
   .timeline-item.right::after {
     left: 19px;
   }
   
-  /* Kummankin puolen nuolet osoittavat oikealle */
   .timeline-item.left .timeline-content::before,
   .timeline-item.right .timeline-content::before {
-    left: -10px;
-    right: auto;
-    border-right: 10px solid var(--card-bg);
+    left: -12px;
+    border-right: 12px solid var(--card-bg);
     border-left: 0;
   }
   
-  /* Kummankin puolen alapalkit samansuuntaisiksi */
   .timeline-item.left .timeline-content::after,
   .timeline-item.right .timeline-content::after {
     background: linear-gradient(to right, var(--secondary-color), transparent) !important;
-  }
-  
-  /* Työkokemus ja koulutus -osiot erotetaan visuaalisesti */
-  .timeline-item.right:first-of-type {
-    margin-top: 30px;
-    padding-top: 30px;
   }
 }
 
