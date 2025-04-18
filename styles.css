@@ -390,6 +390,45 @@ footer {
     height: 12px;
     left: -6px;
   }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+    left: 0;
+  }
+  
+  .timeline-item.right {
+    left: 0;
+    order: 2;
+    margin-top: 60px;
+  }
+  
+  .timeline-item.left::after, 
+  .timeline-item.experience::after,
+  .timeline-item.right::after, 
+  .timeline-item.education::after {
+    left: 19px;
+    right: auto;
+  }
+  
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before,
+  .timeline-item.experience .timeline-content::before,
+  .timeline-item.education .timeline-content::before {
+    left: -12px;
+    border-right: 12px solid var(--card-bg);
+    border-left: 0;
+  }
+  
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content,
+  .timeline-item.experience .timeline-content,
+  .timeline-item.education .timeline-content {
+    transform-origin: center left;
+    width: 100%;
+  }
 }
 
 /* Modaali-ikkunan tyylit */
@@ -824,6 +863,27 @@ footer {
   z-index: 2;
 }
 
+/* Työkokemus = vasen puoli */
+.timeline-item.left {
+  left: 0;
+  animation-delay: 0.1s;
+}
+
+/* Koulutus = oikea puoli */
+.timeline-item.right {
+  left: 50%;
+  animation-delay: 0.3s;
+}
+
+/* Työkokemus ja koulutus luokat */
+.timeline-item.experience {
+  /* Sama kuin left-luokka */
+}
+
+.timeline-item.education {
+  /* Sama kuin right-luokka */
+}
+
 /* Sisältö */
 .timeline-content {
   padding: 12px;
@@ -909,6 +969,43 @@ footer {
   opacity: 1;
 }
 
+/* Nuolenkärjet */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.timeline-item.left .timeline-content::before {
+  right: -10px;
+  border-left: 10px solid var(--card-bg);
+}
+
+.timeline-item.right .timeline-content::before {
+  left: -10px;
+  border-right: 10px solid var(--card-bg);
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.timeline-content:hover h3 {
+  color: var(--secondary-color);
+}
+
+.timeline-item.right .timeline-content:hover h3 {
+  color: var(--primary-color);
+}
+
 @media (max-width: 768px) {
   .timeline-headers {
     flex-direction: column;
@@ -959,90 +1056,58 @@ footer {
     margin-top: 40px;
   }
   
+  /* Kaikki laatikot samaan kohtaan */
   .timeline-item {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
     margin-bottom: 30px;
+    left: 0; /* Varmistaa että kaikki laatikot ovat samassa kohdassa */
   }
   
-  .timeline-item.left {
+  .timeline-item.left, .timeline-item.experience {
     order: 1;
   }
   
-  .timeline-item.right {
-    left: 0;
+  .timeline-item.right, .timeline-item.education {
+    left: 0; /* Varmistetaan että right-luokan laatikot ovat samassa kohdassa */
     order: 2;
     margin-top: 60px;
   }
   
-  .timeline-item.left::after {
+  /* Yhtenäistetään pallot */
+  .timeline-item.left::after, 
+  .timeline-item.experience::after,
+  .timeline-item.right::after, 
+  .timeline-item.education::after {
     left: 19px;
     right: auto;
   }
   
-  .timeline-item.right::after {
-    left: 19px;
-  }
-  
+  /* Yhtenäistetään nuolenkärjet */
   .timeline-item.left .timeline-content::before,
-  .timeline-item.right .timeline-content::before {
+  .timeline-item.right .timeline-content::before,
+  .timeline-item.experience .timeline-content::before,
+  .timeline-item.education .timeline-content::before {
     left: -12px;
     border-right: 12px solid var(--card-bg);
     border-left: 0;
   }
   
+  /* Yhtenäistetään viivat */
   .timeline-item.left .timeline-content::after,
-  .timeline-item.right .timeline-content::after {
+  .timeline-item.right .timeline-content::after,
+  .timeline-item.experience .timeline-content::after,
+  .timeline-item.education .timeline-content::after {
     background: linear-gradient(to right, var(--secondary-color), transparent) !important;
   }
-}
-
-/* Vasemman puolen kohteet */
-.timeline-item.left {
-  left: 0;
-  animation-delay: 0.1s;
-}
-
-/* Oikean puolen kohteet */
-.timeline-item.right {
-  left: 50%;
-  animation-delay: 0.3s;
-}
-
-/* Nuolenkärjet */
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 24px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-.timeline-item.left .timeline-content::before {
-  right: -10px;
-  border-left: 10px solid var(--card-bg);
-}
-
-.timeline-item.right .timeline-content::before {
-  left: -10px;
-  border-right: 10px solid var(--card-bg);
-}
-
-.timeline-content h3 {
-  font-size: 1.3rem;
-  margin-top: 0;
-  color: var(--text-color);
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.timeline-content:hover h3 {
-  color: var(--secondary-color);
-}
-
-.timeline-item.right .timeline-content:hover h3 {
-  color: var(--primary-color);
+  
+  /* Yhtenäistetään sisältölaatikoiden tyylit mobiilissa */
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content,
+  .timeline-item.experience .timeline-content,
+  .timeline-item.education .timeline-content {
+    transform-origin: center left;
+    width: 100%;
+  }
 } 
