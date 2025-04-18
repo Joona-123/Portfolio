@@ -912,17 +912,17 @@ footer {
 @media (max-width: 768px) {
   .timeline-headers {
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 70px;
-    gap: 10px;
+    align-items: center;
+    padding-left: 0;
+    gap: 20px;
     margin-bottom: 30px;
   }
   
   .timeline-header {
     width: auto;
-    text-align: left;
+    text-align: center;
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   
   .timeline-header.left {
@@ -933,13 +933,13 @@ footer {
     margin-left: 0;
   }
 
-  .timeline::before, .timeline::after {
+  .timeline::before {
     left: 30px;
     width: 4px;
   }
   
   .timeline::after {
-    left: 36px;
+    display: none;
   }
   
   .timeline-item {
@@ -947,6 +947,7 @@ footer {
     padding-left: 70px;
     padding-right: 25px;
     margin-bottom: 30px;
+    left: 0 !important;
   }
   
   .timeline-item.right {
@@ -954,13 +955,15 @@ footer {
   }
   
   .timeline-item.left::after, .timeline-item.right::after {
-    left: 19px;
+    left: 22px;
+    right: auto;
   }
   
   .timeline-item.left .timeline-content::before,
   .timeline-item.right .timeline-content::before {
-    left: -12px;
-    border-right: 12px solid var(--card-bg);
+    left: -10px;
+    right: auto;
+    border-right: 10px solid var(--card-bg);
     border-left: 0;
   }
   
