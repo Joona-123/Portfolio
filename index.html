@@ -27,8 +27,30 @@
 
   <header id="home" class="hero">
     <div class="hero-content">
-      <h1 class="animate-text">Joona</h1>
-      <p class="animate-text-delay">Insinööri | Ohjelmoija | Avaruustekniikkafani</p>
+      <h1 class="animate-text">Joona Laitala</h1>
+      <p class="animate-text-delay">Koneinsinööriopiskelija | Ohjelmoija | Avaruustekniikkafani</p>
+      <div class="contact-links">
+        <a href="mailto:joona.laitala@fmi.fi" class="contact-link">
+          <i class="contact-icon email-icon"></i>
+          <span>joona.laitala@fmi.fi</span>
+        </a>
+        <a href="tel:0440782279" class="contact-link">
+          <i class="contact-icon phone-icon"></i>
+          <span>044 078 2279</span>
+        </a>
+        <a href="https://www.google.com/maps/search/Valakuja+6A+5,+02770+Espoo" target="_blank" class="contact-link">
+          <i class="contact-icon address-icon"></i>
+          <span>Valakuja 6A 5, 02770 Espoo</span>
+        </a>
+        <a href="https://www.youtube.com/@joonalaitala" target="_blank" class="contact-link">
+          <i class="contact-icon youtube-icon"></i>
+          <span>youtube.com/@joonalaitala</span>
+        </a>
+        <a href="CV - Joona laitala.pdf" download class="contact-link">
+          <i class="contact-icon cv-icon"></i>
+          <span>Lataa CV</span>
+        </a>
+      </div>
       <div class="scroll-indicator">
         <span></span>
       </div>
@@ -62,6 +84,11 @@
           <p>Tekninen piirtäminen ja suunnittelu</p>
         </div>
         <div class="skill-card">
+          <i class="skill-icon">🧩</i>
+          <h3>Arduino</h3>
+          <p>Elektroniikkaprojektit ja prototyypit</p>
+        </div>
+        <div class="skill-card">
           <i class="skill-icon">🖥️</i>
           <h3>Raspberry Pi</h3>
           <p>IoT-projektit ja automaatio</p>
@@ -78,28 +105,104 @@
       <h2 class="section-title">Projektit</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <h3>Metrover V2</h3>
-          <p>Robottialustan ohjausjärjestelmän uudelleensuunnittelu (2025)</p>
-          <button class="project-btn" onclick="showProjectDetails('metrover')">Lisätietoja</button>
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Metrover V2" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Metrover V2</h3>
+            <p>Robottialustan ohjausjärjestelmän uudelleensuunnittelu (2025)</p>
+            <button class="project-btn" onclick="showProjectDetails('metrover')">Lisätietoja</button>
+          </div>
         </div>
         <div class="project-card">
-          <h3>Sääpallosimulaattori</h3>
-          <p>Python-pohjainen lentoradan ennustaja GFS-datalla</p>
-          <button class="project-btn" onclick="showProjectDetails('saa')">Lisätietoja</button>
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sääpallo" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Sääpallo</h3>
+            <p>Stratosfääriin nouseva mittausasema</p>
+            <button class="project-btn" onclick="showProjectDetails('saapallo')">Lisätietoja</button>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2 class="section-title">Yhteystiedot</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <i class="contact-icon">📧</i>
-          <a href="mailto:Joona@example.com">Joona@example.com</a>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pienoisraketit" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Pienoisraketit</h3>
+            <p>Erilaisten pienoisrakettien suunnittelu ja rakentaminen</p>
+            <button class="project-btn" onclick="showProjectDetails('pienoisraketit')">Lisätietoja</button>
+          </div>
         </div>
-        <div class="contact-card">
-          <i class="contact-icon">💻</i>
-          <a href="https://github.com/Joona" target="_blank">github.com/Joona</a>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1567416661576-659c4298a2d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Raketin lentoratasimulaatio" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Raketin lentoratasimulaatio</h3>
+            <p>Työkalut rakettien suorituskyvyn mittaamiseen ja ennustamiseen</p>
+            <button class="project-btn" onclick="showProjectDetails('lentoratasimulaatio')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="TVC-raketti" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>TVC-raketti</h3>
+            <p>Ohjattava raketti suuntaukseen perustuvalla moottorin ohjauksella</p>
+            <button class="project-btn" onclick="showProjectDetails('tvc')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Firefly FPV-lennokki" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Firefly FPV-lennokki</h3>
+            <p>Kotitekoinen FPV-lentolaiteprojekti</p>
+            <button class="project-btn" onclick="showProjectDetails('firefly')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="NOAA-satelliittikuvien vastaanotto" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>NOAA-satelliittikuvien vastaanotto</h3>
+            <p>Sääsatelliittien kuvien vastaanotto ja käsittely</p>
+            <button class="project-btn" onclick="showProjectDetails('noaa')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1593106410884-bab9cfe0502d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sähköyksipyöräisen jalkataso" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Sähköyksipyöräisen jalkataso</h3>
+            <p>CNC-koneistettu jalkataso sähköyksipyöräiseen</p>
+            <button class="project-btn" onclick="showProjectDetails('jalkatasoEUC')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Älypuhelimesta planeettakamera" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Älypuhelimesta planeettakamera</h3>
+            <p>Älypuhelimen muuntaminen kaukoputken planeettakameraksi</p>
+            <button class="project-btn" onclick="showProjectDetails('planeettakamera')">Lisätietoja</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image-container">
+            <img src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sääpallosimulaattori" class="project-card-image">
+          </div>
+          <div class="project-content">
+            <h3>Sääpallosimulaattori</h3>
+            <p>Python-pohjainen lentoradan ennustaja GFS-datalla</p>
+            <button class="project-btn" onclick="showProjectDetails('saa')">Lisätietoja</button>
+          </div>
         </div>
       </div>
     </section>
@@ -108,5 +211,7 @@
   <footer>
     <p>&copy; 2025 Joona. Kaikki oikeudet pidätetään.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
