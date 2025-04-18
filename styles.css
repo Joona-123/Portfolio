@@ -157,27 +157,37 @@ section {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .skill-card {
   background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 1.2rem;
+  border-radius: 8px;
   text-align: center;
   transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
 }
 
 .skill-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .projects-grid {
@@ -349,6 +359,36 @@ footer {
   
   .hobbies-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .experience-education-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .column-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .experience-timeline::before {
+    left: 60px;
+  }
+  
+  .experience-date {
+    min-width: 60px;
+    font-size: 0.8rem;
+    padding-right: 1rem;
+  }
+  
+  .experience-content {
+    padding-left: 1.5rem;
+  }
+  
+  .experience-content::before {
+    width: 12px;
+    height: 12px;
+    left: -6px;
   }
 }
 
@@ -638,14 +678,343 @@ footer {
   border-radius: 50%;
 }
 
-.hobby-card h3 {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: var(--primary-color);
-}
-
 .hobby-card p {
   color: var(--text-color);
   line-height: 1.6;
+}
+
+.project-content h3, .hobby-card h3 {
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Työkokemus ja koulutus osio */
+.experience-education-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Aikajanan otsikot */
+.timeline-headers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  position: relative;
+  padding: 0 60px;
+}
+
+.timeline-header {
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.timeline-header.left {
+  margin-right: 30px;
+  color: var(--secondary-color);
+  animation-delay: 0.1s;
+}
+
+.timeline-header.right {
+  margin-left: 30px;
+  color: var(--primary-color);
+  animation-delay: 0.3s;
+}
+
+/* Aikajana */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Vierekkäiset pystyviivat */
+.timeline::before, .timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  top: 0;
+  bottom: 0;
+  border-radius: 6px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  z-index: 1;
+}
+
+.timeline::before {
+  left: calc(50% - 15px);
+  background: linear-gradient(to bottom, rgba(26, 188, 156, 0), var(--secondary-color) 10%, var(--secondary-color) 90%, rgba(26, 188, 156, 0));
+  box-shadow: 0 0 20px rgba(26, 188, 156, 0.5);
+  animation-delay: 0.4s;
+}
+
+.timeline::after {
+  left: calc(50% + 15px);
+  background: linear-gradient(to bottom, rgba(44, 62, 80, 0), var(--primary-color) 10%, var(--primary-color) 90%, rgba(44, 62, 80, 0));
+  box-shadow: 0 0 20px rgba(44, 62, 80, 0.4);
+  animation-delay: 0.6s;
+}
+
+/* Keskipisteen pallot */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 26px;
+  border-radius: 50%;
+  z-index: 5;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+.timeline-item.left::after {
+  right: -0px;
+  background: linear-gradient(135deg, #fff, #f5f5f5);
+  border: 4px solid var(--secondary-color);
+  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.right::after {
+  left: 3px;
+  background: linear-gradient(135deg, #fff, #f5f5f5);
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.left:hover::after {
+  background: linear-gradient(135deg, var(--secondary-color), #19b698);
+  box-shadow: 0 0 0 6px rgba(26, 188, 156, 0.3), 0 0 15px rgba(26, 188, 156, 0.5);
+  transform: scale(1.2);
+}
+
+.timeline-item.right:hover::after {
+  background: linear-gradient(135deg, var(--primary-color), #243949);
+  box-shadow: 0 0 0 6px rgba(44, 62, 80, 0.3), 0 0 15px rgba(44, 62, 80, 0.5);
+  transform: scale(1.2);
+}
+
+/* Aikajanan kohdat */
+.timeline-item {
+  padding: 5px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 2;
+}
+
+/* Sisältö */
+.timeline-content {
+  padding: 12px;
+  background: var(--card-bg);
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  border: 1px solid rgba(200, 200, 200, 0.15);
+  backdrop-filter: blur(5px);
+  transform-origin: center left;
+  z-index: 3;
+}
+
+.timeline-item.right .timeline-content {
+  transform-origin: center right;
+}
+
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.timeline-item.left .timeline-content::after {
+  background: linear-gradient(to right, var(--secondary-color), transparent);
+}
+
+.timeline-item.right .timeline-content::after {
+  background: linear-gradient(to left, var(--primary-color), transparent);
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.08);
+  border-color: rgba(200, 200, 200, 0.25);
+}
+
+/* Päivämäärät */
+.timeline-date {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+  padding: 4px 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.left .timeline-date {
+  color: #fff;
+  background: linear-gradient(to right, var(--secondary-color), #19b698);
+  box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+}
+
+.timeline-item.right .timeline-date {
+  color: #fff;
+  background: linear-gradient(to right, var(--primary-color), #243949);
+  box-shadow: 0 3px 10px rgba(44, 62, 80, 0.3);
+}
+
+.timeline-content:hover .timeline-date {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-place {
+  font-style: italic;
+  margin: 4px 0 6px;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.timeline-content:hover .timeline-place {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline-headers {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 70px;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-header {
+    width: auto;
+    text-align: left;
+    margin: 0;
+    font-size: 1.6rem;
+  }
+  
+  .timeline-header.left {
+    margin-right: 0;
+  }
+  
+  .timeline-header.right {
+    margin-left: 0;
+  }
+
+  .timeline::before, .timeline::after {
+    left: 30px;
+    width: 4px;
+  }
+  
+  .timeline::after {
+    left: 36px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-item.right {
+    left: 0;
+  }
+  
+  .timeline-item.left::after, .timeline-item.right::after {
+    left: 19px;
+  }
+  
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before {
+    left: -12px;
+    border-right: 12px solid var(--card-bg);
+    border-left: 0;
+  }
+  
+  .timeline-item.left .timeline-content::after,
+  .timeline-item.right .timeline-content::after {
+    background: linear-gradient(to right, var(--secondary-color), transparent) !important;
+  }
+}
+
+/* Vasemman puolen kohteet */
+.timeline-item.left {
+  left: 0;
+  animation-delay: 0.1s;
+}
+
+/* Oikean puolen kohteet */
+.timeline-item.right {
+  left: 50%;
+  animation-delay: 0.3s;
+}
+
+/* Nuolenkärjet */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.timeline-item.left .timeline-content::before {
+  right: -10px;
+  border-left: 10px solid var(--card-bg);
+}
+
+.timeline-item.right .timeline-content::before {
+  left: -10px;
+  border-right: 10px solid var(--card-bg);
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.timeline-content:hover h3 {
+  color: var(--secondary-color);
+}
+
+.timeline-item.right .timeline-content:hover h3 {
+  color: var(--primary-color);
 } 
