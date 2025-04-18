@@ -255,7 +255,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Intersection Observer aanimaatioille
+// Intersection Observer animaatioille
 const observerOptions = {
   threshold: 0.1
 };
