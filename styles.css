@@ -302,25 +302,35 @@ footer {
   .contact-links {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
   }
   
   .contact-link {
     width: 100%;
     max-width: 300px;
     justify-content: flex-start;
+    margin: 0.1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .contact-link span {
+    font-size: 0.9rem;
   }
   
   .hero {
     padding-top: 100px; /* Lisätään enemmän tilaa mobiililaitteilla */
+    height: auto;
+    min-height: 100vh;
   }
   
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-top: -20px; /* Siirretään otsikkoa ylöspäin */
   }
   
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
   
   .nav-links {
