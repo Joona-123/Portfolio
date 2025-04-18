@@ -912,28 +912,34 @@ footer {
 @media (max-width: 768px) {
   .timeline-headers {
     flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    gap: 10px;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    padding-left: 70px;
+    gap: 30px;
+    margin-bottom: 0;
+    position: relative;
   }
   
   .timeline-header {
     width: auto;
-    text-align: center;
+    text-align: left;
     margin: 0;
     font-size: 1.8rem;
-    padding: 10px 0;
+    padding: 0;
+    position: absolute;
+    left: 70px;
   }
   
   .timeline-header.left {
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    top: 0;
   }
   
   .timeline-header.right {
     margin-left: 0;
-    margin-top: 60px;
+    margin-top: 0;
+    top: 50%;
+    margin-top: 30px;
   }
 
   /* Rakenne uusiksi: ensin työkokemus, sitten koulutus */
@@ -941,6 +947,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    padding-top: 50px;
   }
   
   /* Aikajanat ovat nyt allekkain erillisinä viivoina */
@@ -948,7 +955,7 @@ footer {
     left: 30px;
     width: 4px;
     bottom: 50%;
-    top: 0;
+    top: 50px;
   }
   
   .timeline::after {
@@ -994,7 +1001,8 @@ footer {
   
   /* Työkokemus ja koulutus -osiot erotetaan visuaalisesti */
   .timeline-item.right:first-of-type {
-    margin-top: 60px;
+    margin-top: 30px;
+    padding-top: 30px;
   }
 }
 
