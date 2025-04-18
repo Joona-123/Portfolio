@@ -666,6 +666,8 @@ footer {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .project-image:hover {
@@ -829,22 +831,23 @@ footer {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
 }
 
 .project-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .project-image:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .project-video {
@@ -1374,4 +1377,24 @@ footer {
   line-height: 1.5;
   position: relative;
   top: 8px;
+} 
+
+@media (max-width: 768px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .project-image {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+    padding: 15px;
+  }
 } 
