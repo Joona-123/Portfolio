@@ -1,18 +1,80 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #1abc9c;
-  --text-color: #333;
-  --bg-color: #f4f4f4;
-  --card-bg: #fff;
+  --bg-color: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-color: #f5f5f5;
+  --primary-color: #1976D2;
+  --secondary-color: #2a989e;
+  --accent-color: #42A5F5;
+  --border-color: #333;
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Inter', sans-serif;
   --transition: all 0.3s ease;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --hero-gradient-start: #102942;
+  --hero-gradient-end: #0A1929;
+  --navbar-bg: #0A1929;
+  
+  /* Aikajanojen värit */
+  --timeline-education-color: #8e4c00;
+  --timeline-experience-color: #26c9a6;
+  --timeline-date-gradient-end: #19b698;
+  --timeline-hover-color: #c04315;
+  --ball-border-color-education: #553300;
+  --ball-border-color-experience: #004f58;
+  
+  /* Päivämäärälaatikoiden gradientit */
+  --timeline-date-gradient-start-education: #0e356e;
+  --timeline-date-gradient-start-experience: #0e356e;
+  --timeline-date-gradient-end-education: #2A6BB5;
+  --timeline-date-gradient-end-experience: #2A6BB5;
+  
+  /* Pallojen hover-tilan värit */
+  --ball-hover-start-education: #ff6b00;
+  --ball-hover-end-education: #ff6b00;
+  --ball-hover-start-experience: #26c9a6;
+  --ball-hover-end-experience: #26c9a6;
+  
+  /* Aikajanojen otsikkojen värit */
+  --timeline-header-experience-color: #26c9a6;
+  --timeline-header-education-color: #ff6b00;
 }
 
-[data-theme="dark"] {
-  --primary-color: #1a1a1a;
-  --secondary-color: #16a085;
-  --text-color: #f4f4f4;
-  --bg-color: #121212;
-  --card-bg: #1e1e1e;
+[data-theme="light"] {
+  --bg-color: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-color: #333333;
+  --primary-color: #1976D2;
+  --secondary-color: #3886b4;
+  --accent-color: #42A5F5;
+  --border-color: #ddd;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --hero-gradient-start: #4a698d;
+  --hero-gradient-end: #28426a;
+  --navbar-bg: #203c65;
+  
+  /* Aikajanojen värit */
+  --timeline-education-color: #3886b4;
+  --timeline-experience-color: #2a6bb5;
+  --timeline-date-gradient-end: #42A5F5;
+  --timeline-hover-color: #1976D2;
+  --ball-border-color-education: #64A5D1;
+  --ball-border-color-experience: #4C8ED0;
+  
+  /* Päivämäärälaatikoiden gradientit */
+  --timeline-date-gradient-start-education: #3886b4;
+  --timeline-date-gradient-start-experience: #2a6bb5;
+  --timeline-date-gradient-end-education: #64A5D1;
+  --timeline-date-gradient-end-experience: #4C8ED0;
+  
+  /* Pallojen hover-tilan värit */
+  --ball-hover-start-education: #3886b4;
+  --ball-hover-end-education: #64A5D1;
+  --ball-hover-start-experience: #2a6bb5;
+  --ball-hover-end-experience: #4C8ED0;
+  
+  /* Aikajanojen otsikkojen värit */
+  --timeline-header-experience-color: #26c9a6;
+  --timeline-header-education-color: #ff6b00;   
 }
 
 * {
@@ -21,22 +83,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 80px; /* Lisätään scroll-padding, jotta ankkurilinkit eivät vieritä otsikkoa navigaatiopalkin alle */
+  scroll-behavior: smooth; /* Varmistetaan sujuva vieritys */
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
   transition: var(--transition);
+  overflow-x: hidden;
 }
 
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--primary-color);
+  background: var(--navbar-bg);
   padding: 1rem 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-content {
@@ -84,7 +152,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), #34495e);
+  background: linear-gradient(145deg, var(--hero-gradient-start), var(--hero-gradient-end));
   color: white;
   text-align: center;
   padding: 0 2rem;
@@ -137,6 +205,20 @@ section {
   margin: 0 auto;
 }
 
+/* Erikoismuotoilut tietyille osioille */
+.skills {
+  padding-bottom: 2rem;
+}
+
+.projects {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hobbies {
+  padding-top: 2rem;
+}
+
 .section-title {
   text-align: center;
   font-size: 2.5rem;
@@ -155,34 +237,88 @@ section {
   background: var(--secondary-color);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 8px;
-  padding: 20px;
-  max-width: 1200px;
+.skills-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.0rem;
+}
+
+.skills-column {
+  flex: 1;
+  padding: 0rem;
+}
+
+.skills-column h3 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 1000;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Pätevyydet-listan tyylit */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.skill-card {
-  background: var(--card-bg);
-  border-radius: 15px;
-  padding: 10px;
-  text-align: center;
-  transition: var(--transition);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 150px;
-  height: 150px;
+.skill-list-item {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  padding-left: 25px;
+}
+
+.skill-list-item:last-child {
+  border-bottom: none;
+}
+
+.skill-list-item::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+}
+
+/* Alkuperäisen taitogridin tyylit */
+.skills-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
   justify-content: center;
+}
+
+.skill-card {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
   align-items: center;
-  gap: 0px;
+  justify-content: center;
+  text-align: center;
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: #1565C0;
 }
 
 .skill-icon {
@@ -273,7 +409,7 @@ section {
 }
 
 .project-btn:hover {
-  background: #16a085;
+  background: #1565C0;
 }
 
 .contact-grid {
@@ -407,16 +543,16 @@ footer {
   
   .timeline-item {
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 15px;
+    margin-bottom: 15px;
     left: 0;
   }
   
   .timeline-item.right {
     left: 0;
     order: 2;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   .timeline-item.left::after, 
@@ -506,9 +642,9 @@ footer {
   
   .timeline-item {
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 15px;
+    margin-bottom: 0px;
     left: 0;
   }
   
@@ -519,11 +655,11 @@ footer {
   .timeline-item.right, .timeline-item.education {
     left: 0;
     order: 2;
-    margin-top: 30px;
+    margin-top: 0px;
   }
   
   .timeline-item.education:first-of-type {
-    margin-top: 100px;
+    margin-top: 0px;
   }
   
   .timeline-item.left::after, 
@@ -598,7 +734,7 @@ footer {
     font-size: 1.8rem;
     font-weight: 1000;
     color: var(--text-color);
-    padding-left: 30px;
+    padding-left: 0px;
     padding-bottom: 15px;
     z-index: 10;
     position: absolute;
@@ -608,6 +744,21 @@ footer {
     width: 100%;
     text-align: left;
     margin-bottom: 0;
+  }
+
+  .skills-grid {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
@@ -622,13 +773,14 @@ footer {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   overflow-y: auto;
+  padding: 24px;
 }
 
 .modal-content {
   position: relative;
   background-color: var(--bg-color);
   margin: 5% auto;
-  padding: 20px;
+  padding: 40px;
   width: 80%;
   max-width: 800px;
   border-radius: 10px;
@@ -712,7 +864,7 @@ footer {
 .tech-tag:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  background-color: #19b698;
+  background-color: #1565C0;
 }
 
 .tech-tags h3 {
@@ -989,11 +1141,11 @@ footer {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 10px;
 }
 
 /* Testiotsikko (näkyy myös PC-näkymässä) */
@@ -1009,16 +1161,13 @@ footer {
   max-width: 1000px;
   margin: 0 auto 10px;
   position: relative;
-  padding: 0 60px;
+  padding: 0;
 }
 
 .timeline-header {
-  color: var(--secondary-color);
   font-size: 2.2rem;
   font-weight: 700;
   position: relative;
-  text-align: center;
-  width: 200px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: var(--transition);
   letter-spacing: 0.5px;
@@ -1028,45 +1177,45 @@ footer {
 }
 
 .timeline-header.left {
-  margin-right: 0;
-  color: var(--secondary-color);
+  text-align: right;
+  right: calc(50% + 70px);
+  position: absolute;
+  top: -40px;
+  color: var(--timeline-header-experience-color);
   animation-delay: 0.1s;
 }
 
 .timeline-header.right {
-  text-align: right;
-  margin-left: 0;
-  margin-right: 0;
-  color: var(--secondary-color);
+  text-align: left;
+  left: calc(50% + 70px);
+  position: absolute;
+  top: -40px;
+  color: var(--timeline-header-education-color);
   animation-delay: 0.3s;
 }
 
 /* PC-versio otsikko */
 .timeline-header.right.pc-only {
-  text-align: right;
-  margin-left: 0;
-  margin-right: 0;
-  color: var(--primary-color);
+  text-align: left;
+  left: calc(50% + 80px);
+  position: absolute;
+  top: -40px;
+  color: var(--timeline-header-education-color);
   animation-delay: 0.3s;
   display: block;
 }
 
-/* Mobiiliversio otsikko */
+/* Mobiiliversio */
 .timeline-header.mobile-only {
-  display: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 1000;
-  color: var(--text-color);
-  padding-left: 30px;
-  padding-bottom: 15px;
-  z-index: 10;
-  position: relative;
-  margin: 0;
-  left: 0;
-  width: 100%;
   text-align: left;
-  margin-bottom: 0;
+  margin-left: 12px; /* Sama kuin pallon sijainnin etäisyys */
+  color: var(--timeline-header-education-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  display: none; /* Oletuksena piilotettu */
 }
 
 /* Aikajana */
@@ -1089,8 +1238,8 @@ footer {
   border-radius: 6px;
   opacity: 1; /* Näkyy heti */
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(26, 188, 156, 0), var(--secondary-color) 10%, var(--secondary-color) 90%, rgba(26, 188, 156, 0));
-  box-shadow: 0 0 20px rgba(26, 188, 156, 0.5);
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0), var(--timeline-experience-color) 10%, var(--timeline-experience-color) 90%, rgba(26, 26, 26, 0));
+  box-shadow: 0 0 20px rgba(26, 26, 26, 0.7);
 }
 
 /* Pystyviiva oikealle aikajanalle - kokonaan uusi määrittely */
@@ -1104,7 +1253,7 @@ footer {
   border-radius: 6px;
   opacity: 1;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(44, 62, 80, 0), #1a2530 10%, #1a2530 90%, rgba(44, 62, 80, 0));
+  background: linear-gradient(to bottom, rgba(44, 62, 80, 0), var(--timeline-education-color) 10%, var(--timeline-education-color) 90%, rgba(44, 62, 80, 0));
   box-shadow: 0 0 20px rgba(26, 39, 51, 0.7);
 }
 
@@ -1136,26 +1285,26 @@ footer {
 /* Työkokemus-pallot (vasemmalla) */
 .visible-ball.experience-ball {
   right: -12px;
-  border: 4px solid var(--secondary-color);
-  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--ball-border-color-experience);
+  box-shadow: 0 0 0 4px rgba(26, 26, 26, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Koulutus-pallot (oikealla) */
 .visible-ball.education-ball {
   left: -12px;
-  border: 4px solid #1a2530;
+  border: 4px solid var(--ball-border-color-education);
   box-shadow: 0 0 0 4px rgba(26, 39, 51, 0.2), 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover-efektit */
 .timeline-item.experience:hover .visible-ball.experience-ball {
-  background: linear-gradient(135deg, var(--secondary-color), #19b698);
-  box-shadow: 0 0 0 6px rgba(26, 188, 156, 0.3), 0 0 15px rgba(26, 188, 156, 0.5);
+  background: linear-gradient(135deg, var(--ball-hover-start-experience), var(--ball-hover-end-experience));
+  box-shadow: 0 0 0 6px rgba(26, 26, 26, 0.3), 0 0 15px rgba(26, 26, 26, 0.5);
   transform: scale(1.2);
 }
 
 .timeline-item.education:hover .visible-ball.education-ball {
-  background: linear-gradient(135deg, #1a2530, #0a1015);
+  background: linear-gradient(135deg, var(--ball-hover-start-education), var(--ball-hover-end-education));
   box-shadow: 0 0 0 6px rgba(26, 39, 51, 0.3), 0 0 15px rgba(26, 39, 51, 0.5);
   transform: scale(1.2);
 }
@@ -1211,14 +1360,14 @@ footer {
 /* Päivämäärät */
 .timeline:first-child .timeline-date {
   color: #fff;
-  background: linear-gradient(to right, var(--secondary-color), #19b698);
-  box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+  background: linear-gradient(to right, var(--timeline-date-gradient-start-experience), var(--timeline-date-gradient-end-experience));
+  box-shadow: 0 3px 10px rgba(26, 26, 26, 0.3);
 }
 
 .timeline:last-child .timeline-date {
   color: #fff;
-  background: linear-gradient(to right, var(--secondary-color), #19b698);
-  box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+  background: linear-gradient(to right, var(--timeline-date-gradient-start-education), var(--timeline-date-gradient-end-education));
+  box-shadow: 0 3px 10px rgba(26, 39, 51, 0.3);
 }
 
 .timeline-place {
@@ -1257,19 +1406,16 @@ footer {
   
   .timeline-header.mobile-only {
     display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
   
   .timeline-headers {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 30px;
+    padding-left: 0;
     gap: 0;
     margin-bottom: 0;
     position: relative;
     z-index: 10;
-    display: block;
   }
   
   .timeline-header {
@@ -1278,12 +1424,42 @@ footer {
     margin: 0;
     font-size: 1.8rem;
     padding-bottom: 15px;
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin-left: 40px !important;
   }
   
   .timeline-header.left {
+    position: static;
     margin-right: 0;
     margin-bottom: 0;
-    position: relative;
+    padding-left: 0;
+    margin-left: 40px !important;
+    text-align: left;
+  }
+
+  /* Mobiiliversion aikajanaviivat */
+  .timeline::before {
+    left: 0 !important; /* Kaikki viivat vasemmalle */
+    right: auto !important;
+    height: 100% !important; /* Varmistetaan, että viivat ulottuvat koko korkeudelle */
+  }
+
+  /* Mobiiliversion pallot */
+  .visible-ball {
+    left: -12px !important; /* Siirretään pallot hieman vasemmalle, jotta ne ovat viivan päällä */
+    right: auto !important;
+    width: 28px !important; /* Varmistetaan pallon koko */
+    height: 28px !important;
+    top: 26px !important; /* Varmistetaan pystysuuntainen sijoittelu */
+  }
+
+  /* Mobiiliversion aikajanalaatikot */
+  .timeline-item {
+    padding-left: 40px !important; /* Lisätään tilaa viivalle ja palloille */
+    padding-right: 0 !important;
   }
 } 
 
@@ -1319,11 +1495,11 @@ footer {
 }
 
 .timeline:first-child .timeline-content::after {
-  background: linear-gradient(to right, var(--secondary-color), transparent);
+  background: linear-gradient(to right, var(--timeline-experience-color), transparent);
 }
 
 .timeline:last-child .timeline-content::after {
-  background: linear-gradient(to right, var(--secondary-color), transparent);
+  background: linear-gradient(to right, var(--timeline-education-color), transparent);
   opacity: 1;
 }
 
@@ -1353,14 +1529,14 @@ footer {
 /* Koulutuksen vuosilaatikot */
 .timeline-item.education .timeline-date {
   color: #fff;
-  background: linear-gradient(to right, var(--secondary-color), #19b698) !important;
-  box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3) !important;
+  background: linear-gradient(to right, var(--timeline-date-gradient-start-education), var(--timeline-date-gradient-end-education)) !important;
+  box-shadow: 0 3px 10px rgba(26, 39, 51, 0.3) !important;
 }
 
 .timeline-date.education-date {
   color: #fff !important;
-  background: linear-gradient(to right, var(--secondary-color), #19b698) !important;
-  box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3) !important;
+  background: linear-gradient(to right, var(--timeline-date-gradient-start-education), var(--timeline-date-gradient-end-education)) !important;
+  box-shadow: 0 3px 10px rgba(26, 39, 51, 0.3) !important;
 }
 
 /* LinkedIn-ikoni */
@@ -1397,4 +1573,57 @@ footer {
     margin: 10% auto;
     padding: 15px;
   }
+} 
+
+.section-anchor {
+  display: block;
+  position: relative;
+  top:  0px;
+  visibility: hidden;
+  height: 0;
+} 
+
+.project-details p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-detailed-info {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.project-text-section {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.project-image-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.image-caption, .video-caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+}
+
+/* Projektin kuva, jos se on yksittäinen */
+.project-image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 } 
