@@ -2,6 +2,13 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
+// Asetetaan tumma teema oletukseksi
+document.addEventListener('DOMContentLoaded', () => {
+  body.dataset.theme = 'light'; // Aluksi light, jotta toggleToiseen suuntaan toimii oikein
+  body.dataset.theme = 'dark';
+  themeToggle.textContent = '☀️';
+});
+
 themeToggle.addEventListener('click', () => {
   body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
   themeToggle.textContent = body.dataset.theme === 'dark' ? '☀️' : '🌙';
@@ -18,7 +25,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Kuualuksen jalan simulaatio'
   },
   metrover: {
     title: 'Metrover V2',
@@ -29,7 +37,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Metrover V2 demonstration'
   },
   saapallo: {
     title: 'Sääpallo',
@@ -40,18 +49,45 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1508181728973-ef5dcb0c4dc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Sääpallon laukaisu ja lento'
   },
   pienoisraketit: {
     title: 'Pienoisraketit',
     description: 'Erilaisten pienoisrakettien suunnittelu ja rakentaminen',
     details: 'Tässä projektissa suunnittelen ja rakennan erilaisia pienoisraketteja. Projekti sisältää sekä kaupallisia rakettimoottoreja että omia kiinteää polttoainetta käyttäviä prototyyppejä.',
-    technologies: ['CAD', 'Aerodynamiikka', 'Komposiitit', 'Elektroniikka'],
+    technologies: ['CAD', 'Aerodynamiikka', 'Komposiitit', 'Elektroniikka', 'Arduino'],
+    contentSections: [
+      {
+        type: 'text',
+        content: 'Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitieteet ja elektroniikka. Projektin aikana olen oppinut paljon eri tekniikoista ja materiaalien käytöstä.'
+      },
+      {
+        type: 'image',
+        content: 'https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        caption: 'Rakettimalli suunnitteluvaiheessa'
+      },
+      {
+        type: 'text',
+        content: 'Rakettien suunnittelussa tärkeintä on aerodynaaminen tasapaino ja vakaus. Käytän CAD-ohjelmistoja mallien suunnitteluun ja simulointiin ennen rakentamista.'
+      },
+      {
+        type: 'image',
+        content: 'signal-2025-04-04-152137.jpeg',
+        caption: 'Valmis raketti laukaisualustalla'
+      },
+      {
+        type: 'video',
+        content: 'Tintin_Kuumatka_yt%235.mov',
+        caption: 'Raketin laukaisuvideo'
+      }
+    ],
     images: [
       'https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1450186164447-4f8037d3539c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'Tintin_Kuumatka_yt%235.mov',
+    videoCaption: 'Raketin laukaisuvideo'
   },
   lentoratasimulaatio: {
     title: 'Raketin lentoratasimulaatio & työntötestipenkki',
@@ -62,7 +98,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1567416661576-659c4298a2d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1581090721784-8705862f6e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Lentoratasimulaation esittelyvideo'
   },
   tvc: {
     title: 'Thrust vector control -raketti',
@@ -73,7 +110,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1581089778245-3ce67677f718?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'TVC-raketin testivideo'
   },
   firefly: {
     title: 'Firefly FPV-lennokki',
@@ -84,7 +122,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Firefly-lennokin lentovideo'
   },
   noaa: {
     title: 'NOAA-sateliittien kuvien vastaanotto',
@@ -95,7 +134,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'NOAA-satelliittidatan vastaanottovideo'
   },
   jalkatasoEUC: {
     title: 'Sähköyksipyöräisen jalkataso',
@@ -106,7 +146,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1593106410884-bab9cfe0502d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1558389130-9799371cbf87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Jalkatason valmistusvideo'
   },
   planeettakamera: {
     title: 'Älypuhelimesta planeettakamera',
@@ -117,7 +158,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Planeettakameran esittelyvideo'
   },
   saa: {
     title: 'Sääpallosimulaattori',
@@ -128,7 +170,8 @@ const projectDetails = {
       'https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     ],
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoCaption: 'Sääpallosimulaattorin esittelyvideo'
   }
 };
 
@@ -148,18 +191,54 @@ function showProjectDetails(projectId) {
     <h2>${project.title}</h2>
     <div class="project-details">
       <p>${project.description}</p>
-      ${project.images ? `
-        <div class="project-gallery">
-          ${project.images.map(img => `
-            <img src="${img}" alt="${project.title}" class="project-image" onclick="openFullscreen(this)">
-          `).join('')}
-        </div>
-      ` : ''}
-      ${project.video ? `
-        <div class="project-video">
-          <iframe src="${project.video}" frameborder="0" allowfullscreen></iframe>
-        </div>
-      ` : ''}
+      <p class="project-detailed-info">${project.details}</p>
+      
+      ${project.contentSections ? `
+        ${project.contentSections.map(section => `
+          ${section.type === 'text' ? `
+            <div class="project-text-section">
+              <p>${section.content}</p>
+            </div>
+          ` : section.type === 'image' ? `
+            <div class="project-image-section">
+              <img src="${section.content}" alt="${section.caption || project.title}" class="project-image" onclick="showFullscreenImage(this.src)">
+              ${section.caption ? `<p class="image-caption">${section.caption}</p>` : ''}
+            </div>
+          ` : section.type === 'video' ? `
+            <div class="project-video" style="margin-bottom: 5px;">
+              ${section.content.includes('youtube.com') ? 
+                `<iframe src="${section.content}" frameborder="0" allowfullscreen></iframe>` :
+                `<video controls width="100%" src="${section.content.replace('#', '%23')}" 
+                  poster="https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+                  Selaimesi ei tue videotiedostoja.
+                </video>`
+              }
+            </div>
+            ${section.caption ? `<p class="video-caption">${section.caption}</p>` : ''}
+          ` : ''}
+        `).join('')}
+      ` : `
+        ${project.images ? `
+          <div class="project-gallery">
+            ${project.images.map(img => `
+              <img src="${img}" alt="${project.title}" class="project-image" onclick="showFullscreenImage(this.src)">
+            `).join('')}
+          </div>
+        ` : ''}
+        ${project.video ? `
+          <div class="project-video" style="margin-bottom: 5px;">
+            ${project.video.includes('youtube.com') ? 
+              `<iframe src="${project.video}" frameborder="0" allowfullscreen></iframe>` :
+              `<video controls width="100%" src="${project.video}" 
+                poster="https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+                Selaimesi ei tue videotiedostoja.
+              </video>`
+            }
+          </div>
+          ${project.videoCaption ? `<p class="video-caption">${project.videoCaption}</p>` : ''}
+        ` : ''}
+      `}
+      
       <div class="tech-tags">
         <h3>Käytetyt teknologiat:</h3>
         ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
