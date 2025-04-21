@@ -240,16 +240,18 @@ const projectDetails = {
       isPortrait: false
     },
     {
-      type: 'image',
-      content: 'Media\\sääpallo_33.png',
+      type: 'gallery',
       caption: 'Toteutunut gps:llä tallennettu lentoreitti. Hyötykuorma laskeutui n. 8km päähän ennustetusta paikasta.',
-      isPortrait: false
-    },
-    {
-      type: 'image',
-      content: 'Media\\sääpallo_35.jpeg',
-      caption: 'Lentoreitti',
-      isPortrait: false
+      images: [
+        {
+          src: 'Media\\sääpallo_33.png',
+          isPortrait: false
+        },
+        {
+          src: 'Media\\sääpallo_28.png',
+          isPortrait: false
+        },
+      ]
     },
     
     
@@ -258,7 +260,7 @@ const projectDetails = {
 
     {
       type: 'video',
-      content: 'https://youtu.be/m2tmNn_AIf0?si=H-AHgyliNvoPprba',
+      content: 'https://www.youtube.com/embed/m2tmNn_AIf0',
       caption: 'Video sääpallon lennosta',
       isPortrait: false
     },
@@ -282,26 +284,29 @@ const projectDetails = {
         content: 'Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitieteet ja elektroniikka. Projektin aikana olen oppinut paljon eri tekniikoista ja materiaalien käytöstä.'
       },
       {
-        type: 'image',
-        content: 'https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        caption: 'Rakettimalli suunnitteluvaiheessa',
-        isPortrait: true
-      },
-      {
-        type: 'text',
-        content: 'Rakettien suunnittelussa tärkeintä on aerodynaaminen tasapaino ja vakaus. Käytän CAD-ohjelmistoja mallien suunnitteluun ja simulointiin ennen rakentamista.'
-      },
-      {
-        type: 'image',
-        content: 'signal-2025-04-04-152137.jpeg',
-        caption: 'Valmis raketti laukaisualustalla',
-        isPortrait: true
-      },
-      {
-        type: 'video',
-        content: 'Media\\Tintin_Kuumatka_yt#5.mov',
-        caption: 'Raketin laukaisuvideo'
+        type: 'gallery',
+        images: [
+          {
+            src: 'https://www.youtube.com/embed/ihPFJYHEsq8',
+            caption: 'Rakettimalli suunnitteluvaiheessa',
+            isPortrait: false
+          },
+          {
+            src: 'https://www.youtube.com/embed/aGscWCjO5II',
+            caption: 'Rakettimalli suunnitteluvaiheessa',
+            isPortrait: false
+          },
+          {
+            src: 'https://www.youtube.com/embed/aGscWCjO5II',
+            caption: 'Rakettimalli suunnitteluvaiheessa',
+            isPortrait: false
+          }
+        ]
       }
+
+
+
+
     ]
   },
   lentoratasimulaatio: {
@@ -317,7 +322,7 @@ const projectDetails = {
       },
       {
         type: 'image',
-        content: 'Media\\FARSIM_6.png',
+        content: 'Media\\farsim_6.png',
         caption: 'Simulaation visualisointi graafeilla',
         isPortrait: false
       },
@@ -327,14 +332,20 @@ const projectDetails = {
       },
       {
         type: 'image',
-        content: 'Media\\FARSIM_5.jpeg',
+        content: 'Media\\farsim_5.jpeg',
         caption: 'Työntötestipenkin elektroniikka',
         isPortrait: false
       },
       {
         type: 'video',
-        content: 'Media\\FARSIM_9.mp4',
+        content: 'Media\\farsim_9.mp4',
         caption: 'Sähkösytytin'
+      },
+      {
+        type: 'video',
+        content: 'https://www.youtube.com/embed/XP5ysh523F0',
+        caption: 'Rakettimoottorin TSP G35-6 työntötesti.<br>Impulssi: 97.7Ns<br>Keskimääräinen työntövoima: 22N<br>Suurin työntövoima: 69.2N',
+        isPortrait: false
       }
     ]
   },
@@ -492,7 +503,7 @@ const projectDetails = {
       },
       {
         type: 'image',
-        content: 'Media\\Pedaali_2.jpeg',
+        content: 'Media\\pedaali_2.jpeg',
         caption: 'Jalkatason CAD-malli',
         isPortrait: true
       },
@@ -500,12 +511,12 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\Pedaali_1.jpeg',
+            src: 'Media\\pedaali_1.jpeg',
             caption: 'Jalkatason CAD-malli',
             isPortrait: false
           },
           {
-            src: 'Media\\Pedaali_14.jpg',
+            src: 'Media\\pedaali_14.jpg',
             caption: 'Jalkatason CAD-malli',
             isPortrait: false
           }
@@ -515,17 +526,17 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\Pedaali_6.jpeg',
+            src: 'Media\\pedaali_6.jpeg',
             caption: 'Jalkatason CAD-malli',
             isPortrait: false
           }, 
           {
-            src: 'Media\\Pedaali_8.jpeg',
+            src: 'Media\\pedaali_8.jpeg',
             caption: 'Jalkatason CAD-malli',
             isPortrait: false
           },
           {
-            src: 'Media\\Pedaali_9.jpeg',
+            src: 'Media\\pedaali_9.jpeg',
             caption: 'Jalkatason CAD-malli',
             isPortrait: false
           },
@@ -537,12 +548,12 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\Pedaali_15.jpg',
+            src: 'Media\\pedaali_15.jpg',
             caption: '3D-kuvan tarkemmat toleroinnit PDF-tiedostossa',
             isPortrait: false
           },
           {
-            src: 'Media\\Pedaali_3.png',
+            src: 'Media\\pedaali_3.png',
             caption: 'Jalkataso osittain koneistettuna',
             isPortrait: false
           }
@@ -552,17 +563,17 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\Pedaali_12.jpeg',
+            src: 'Media\\pedaali_12.jpeg',
             caption: '',
             isPortrait: false
           },
           {
-            src: 'Media\\Pedaali_5.jpeg',
+            src: 'Media\\pedaali_5.jpeg',
             caption: '',
             isPortrait: false
           },
           {
-            src: 'Media\\Pedaali_11.jpeg',
+            src: 'Media\\pedaali_11.jpeg',
             caption: '',
             isPortrait: false
           }
@@ -573,7 +584,7 @@ const projectDetails = {
 
       {
         type: 'image',
-        content: 'Media\\Pedaali_10.jpeg',
+        content: 'Media\\pedaali_10.jpeg',
         caption: 'Jalkatasot koneistettuna, asennettuna ja valmiina ajoon!',
         isPortrait: true
       }
@@ -704,12 +715,12 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\GFS2_3.jpg',
+            src: 'Media\\gfs2_3.jpg',
             caption: 'Lentoreitti',
             isPortrait: false
           },
           {
-            src: 'Media\\GFS2_2.jpg',
+            src: 'Media\\gfs2_2.jpg',
             caption: 'Sondehubin ennustajalla laskettu lentoreitti',
             isPortrait: false
           },
@@ -804,7 +815,7 @@ function showFullscreenImage(src, galleryImages = null, caption = null) {
 }
 
 // Videotiedoston näyttäminen koko näytöllä
-function showFullscreenVideo(src, galleryItems = null, caption = null) {
+function showFullscreenVideo(src, galleryItems = null, caption = null, isYouTube = false) {
   const fullscreenContainer = document.createElement('div');
   fullscreenContainer.className = 'fullscreen-image';
   
@@ -815,7 +826,7 @@ function showFullscreenVideo(src, galleryItems = null, caption = null) {
     currentImageIndex = currentGalleryImages.findIndex(item => item.src === src);
   } else {
     // Yksittäinen video, ei galleriaa
-    currentGalleryImages = [{ src, caption, isVideo: true }];
+    currentGalleryImages = [{ src, caption, isVideo: true, isYouTube: isYouTube }];
     currentImageIndex = 0;
   }
   
@@ -880,11 +891,21 @@ function updateFullscreenContent(container) {
   const item = currentGalleryImages[currentImageIndex];
   const hasMultipleItems = currentGalleryImages.length > 1;
   
-  // Tarkista, onko sisältö video vai kuva
+  // Tarkista, onko sisältö video vai kuva ja onko se YouTube
   const isVideo = item.isVideo || item.src.toLowerCase().endsWith('.mp4') || item.src.toLowerCase().endsWith('.mov');
+  const isYouTube = item.isYouTube || (item.src && item.src.includes('youtube.com'));
   
   let contentHtml = '';
-  if (isVideo) {
+  if (isYouTube) {
+    contentHtml = `
+      <iframe width="90%" height="80%" style="max-height: 80vh;" 
+        src="${item.src}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    `;
+  } else if (isVideo) {
     contentHtml = `
       <video controls autoplay width="90%" height="auto" style="max-height: 80vh;" ${item.loop ? 'loop' : ''}>
         <source src="${item.src.replace(/\\/g, '/').replace('#', '%23')}" type="${item.src.toLowerCase().endsWith('.mp4') ? 'video/mp4' : 'video/quicktime'}">
@@ -943,11 +964,11 @@ function navigateGallery(direction, container) {
   }
 }
 
-// Muokataan onclick-attribuutteja galleriakuville
+// Muokataan initGalleryImages funktiota käsittelemään YouTube-videoita
 function initGalleryImages() {
   // Käsitellään galleriakuvat
   document.querySelectorAll('.project-gallery-section').forEach(gallery => {
-    const images = Array.from(gallery.querySelectorAll('.gallery-image, .gallery-video')).map(elem => {
+    const images = Array.from(gallery.querySelectorAll('.gallery-image, .gallery-video, .gallery-youtube-wrapper')).map(elem => {
       if (elem.classList.contains('gallery-video')) {
         return {
           src: elem.getAttribute('data-src'),
@@ -955,6 +976,13 @@ function initGalleryImages() {
           isVideo: true,
           loop: elem.hasAttribute('loop'),
           autoplay: elem.hasAttribute('autoplay')
+        };
+      } else if (elem.classList.contains('gallery-youtube-wrapper')) {
+        return {
+          src: elem.getAttribute('data-youtube-src'),
+          caption: elem.getAttribute('data-caption') || '',
+          isVideo: true,
+          isYouTube: true
         };
       } else {
         return {
@@ -993,6 +1021,16 @@ function initGalleryImages() {
         }
         
         showFullscreenVideo(src, images, video.getAttribute('data-caption') || '');
+      });
+    });
+    
+    // Lisää YouTube-videoille click-event
+    gallery.querySelectorAll('.gallery-youtube-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const src = wrapper.getAttribute('data-youtube-src');
+        const caption = wrapper.getAttribute('data-caption') || '';
+        
+        showFullscreenVideo(src, images, caption, true);
       });
     });
     
@@ -1072,7 +1110,7 @@ function showProjectDetails(projectId) {
               <div class="project-image-grid">
                 ${section.images.map(img => `
                   <div class="gallery-image-container">
-                    ${img.src.toLowerCase().endsWith('.mp4') || img.src.toLowerCase().endsWith('.mov') ? `
+                    ${img.src && (img.src.toLowerCase().endsWith('.mp4') || img.src.toLowerCase().endsWith('.mov')) ? `
                       <div class="gallery-video-wrapper">
                         <video class="gallery-video" data-gallery="group" data-caption="${img.caption || ''}" data-src="${img.src}" 
                           preload="metadata" ${img.autoplay ? 'autoplay muted loop playsinline' : ''} ${img.loop ? 'loop' : ''}>
@@ -1080,6 +1118,13 @@ function showProjectDetails(projectId) {
                           Selaimesi ei tue videotiedostoja.
                         </video>
                         <div class="gallery-video-play-button">▶</div>
+                      </div>
+                    ` : img.src && img.src.includes('youtube.com') ? `
+                      <div class="gallery-youtube-wrapper" data-youtube-src="${img.src}" data-caption="${img.caption || ''}">
+                        <div class="gallery-youtube-thumbnail">
+                          <img src="https://img.youtube.com/vi/${img.src.split('/').pop()}/0.jpg" alt="YouTube thumbnail" class="gallery-image">
+                          <div class="gallery-video-play-button">▶</div>
+                        </div>
                       </div>
                     ` : `
                       <img src="${img.src}" alt="${img.caption || project.title}" class="gallery-image ${img.isPortrait ? 'portrait-image' : ''}" data-gallery="group" data-caption="${img.caption || ''}">
