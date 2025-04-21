@@ -6,6 +6,7 @@
   --secondary-color: #2a989e;
   --accent-color: #42A5F5;
   --border-color: #333;
+  --border-separator-color: rgba(255, 255, 255, 0.2);
   --heading-font: 'Poppins', sans-serif;
   --body-font: 'Inter', sans-serif;
   --transition: all 0.3s ease;
@@ -47,6 +48,7 @@
   --secondary-color: #3886b4;
   --accent-color: #42A5F5;
   --border-color: #ddd;
+  --border-separator-color: rgba(0, 0, 0, 0.2);
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --hero-gradient-start: #4a698d;
   --hero-gradient-end: #28426a;
@@ -270,7 +272,7 @@ section {
   color: var(--text-color);
   font-size: 1.2rem;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--border-separator-color);
   position: relative;
   padding-left: 25px;
 }
@@ -348,25 +350,23 @@ section {
 }
 
 .project-card {
-  background: var(--card-bg);
-  padding: 0;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  position: relative;
+  min-height: 380px;
+  border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-image-container {
   width: 100%;
   height: 200px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .project-card-image {
@@ -376,25 +376,68 @@ section {
   transition: transform 0.5s ease;
 }
 
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(0, 255, 170, 0.7) 0%, rgba(0, 140, 255, 0.7) 100%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover .project-content {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.project-card:hover .project-content h3,
+.project-card:hover .project-content p {
+  color: white;
+}
+
 .project-card:hover .project-card-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.8);
+  z-index: 3;
+  position: relative;
+  border-radius: 0 0 15px 15px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1; /* Kasvatetaan sisältöalue täyttämään loppukortin */
 }
 
 .project-content h3 {
-  margin-top: 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgb(240, 240, 240);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .project-content p {
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  flex-grow: 1; /* Annetaan tekstin venyä tarvittaessa */
 }
 
 .project-btn {
@@ -405,7 +448,8 @@ section {
   border-radius: 5px;
   cursor: pointer;
   transition: var(--transition);
-  margin-top: 1rem;
+  align-self: flex-start; /* Asetetaan painike vasempaan reunaan */
+  margin-top: auto; /* Työnnetään painike alas */
 }
 
 .project-btn:hover {
