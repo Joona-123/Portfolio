@@ -91,13 +91,76 @@ const projectDetails = {
     technologies: ['FEM-simulointi', 'Kinematiikkasimulointi', 'Solidworks', 'CAD'],
     year: '2024',
     contentSections: [
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\fem_2.jpg',
+            caption: 'Kuualuksen jalan simulointi',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\fem_6.jpg',
+            caption: 'Kuualuksen jalan simulointi',
+            isPortrait: false
+          }
+        ]
+      },
+          
 
+
+
+      {
+        type: 'image',
+        content: 'Media\\fem_6.jpg',
+        caption: 'Kuualuksen jalan simulointi',
+        isPortrait: false
+      },
+      {
+        type: 'video',
+        content: 'Media\\fem_4.mp4',
+        caption: 'Jalan kinematiikkasimulaatio',
+        isPortrait: false,
+        autoplay: true,
+        loop: true,
+        muted: true
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\fem_11.jpg',
+            caption: 'Jännitys',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\fem_14.jpg',
+            caption: 'Venymä',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\fem_13.jpg',
+            caption: 'Siirtymä',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\fem_12.jpg',
+            caption: 'Jännitys',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'image',
+        content: 'Media\\fem_1.jpg',
+      }   
     ]
   },
   saapallo: {
     title: 'Sääpallo',
-    description: 'Stratosfääriin nouseva kameroilla, erilaisilla mittalaitteilla ja GPS-paikantimilla varustettu laite',
-    details: 'Sääpallo-projekti keskittyy stratosfääriin lähetettävän tieteellisen mittausaseman kehittämiseen. Pallo kerää dataa ilmakehän eri kerroksista ja lähettää sen reaaliajassa maa-asemalle.',
+    description: '',
+    details: 'Tässä projektissa rakensin laitteen, joka nousi heliumilla täytetyllä sääpallolla stratosfääriin 35:n kilometrin korkeuteen. "avaruuden rajalle" Laitteessa oli mukana kaksi kameraa, kolme lämpötilamittaria, kolme gps-paikanninta, APRS-radiolähetin, laskuvarjo sekä laitteen löytämistä helpottavat vilkkuvalot ja piippauskaiuttimet.<br><br>Projekti lähti liikkeelle pitkän harkinnan ja samankaltaisiin projekteihin tutustumisen jälkeen mm. Youtuben ja harrastelijoiden nettisivujen kautta. Päätin viimein aloittaa tällaisen projektin itse. Aloitin projektin kehittelemällä lennonohjainkortin, joka ohjasi kameroita, vilkkuvaloja sekä piippauskaiuttimia. Kortti toimi myös dataloggerina ja tallensi koko lennon ajalta gps-tiedot, lämpötilat, akun jännitteen ja ilmankosteuden microSD-kortille.',
     technologies: ['Arduino', 'GPS-paikannus', 'barometri', 'Excel', 'elektroniikka', '3D-tulostus', 'radiotekniikka', 'APRS-paikannus', 'Antennitekniikka', 'Ompelu'],
     year: '2020 - 2021',
     contentSections: [
@@ -107,7 +170,7 @@ const projectDetails = {
       },
       {
         type: 'gallery',
-        caption: 'Dataloggerin prototyyppausta',
+        caption: 'Dataloggeri kehitysvaiheessa. Kuvissa näkyy gps-moduuli, microSD-korttipaikka, kosteusmittari, lämpömittari sekä Arduino nano.',
         images: [
           {
             src: 'Media\\sääpallo_2.jpeg',
@@ -118,7 +181,12 @@ const projectDetails = {
             isPortrait: false
           },
         ]
-      }, 
+      },
+      {
+        type: 'text',
+        content: 'Sähkö elektroniikalle tuli paristopaketista, joka oli kasattu 16:sta tavallisesta AA-paristosta. Tarkempi malli on Energizer Ultimate Lithium L91. Paristomalliksi valikoitui litiumparisto sen hyvän suorituskyvyn takia alhaisissa lämpötiloissa. Tein paristopaketteja kaksi, toinen lennolle ja toinen oli testausta varten. Laskin tarvittavan määrän akun kapasiteetille ennen sen valmistusta, mutta testeillä varmistin laskelmat. Paketin kokonaiskapasiteetti oli 84Wh, joka on melko suuri kulutukseen verrattuna. Tämä siksi että jos laite ei olisi löytynyt maastosta heti, olisi radiolähetin, piippauskaiutin ja vilkkuvalot toimineet vielä pitkään.'
+
+      },
       {
         type: 'gallery',
         caption: 'Patteripaketin kasaus. 16kpl 1,5V Energizer Ultimate Lithium L91 AA-pattereita',
@@ -134,11 +202,15 @@ const projectDetails = {
         ]
       },
       {
+        type: 'text',
+        content: 'Lennolla mukana oli kolme gps-paikanninta:<br>- Spot Trace satelliittipaikannin, joka välitti sijaintitedot sateliittien kautta maahan. Tämä paikannin on siksi hyvä, että se toimii melkein missä tahansa maapallolla juurikin omien sateliittien takia.<br><br>- APRS-paikannin radiolähettimellä, ainoa paikannin joka välittää sijaintitiedon koko lennon ajalta maahan.<br><br>- GSM-matkapuhelinverkolla sijaintitiedon välittävä paikannin. Tämä paikannin toimii vain, jos se saa yhteyden matkapuhelinverkkoon. Paikantimelle oli oma prepaid-liittymä.<br><br>Tärkeimmälle paikantimelle eli Spot Tracelle rakensin gimbal-mekanismin, joka kääntää paikantimen gps-antennin osoittamaan aina ylöspäin, oli laatikko missä asennossa tahansa. Tämä pienetää riskiä, että laatikko jäisi ylösalaisin laskeutessaan ja tämän takia paikannin ei kuulisi gps-sateliittien signaalia.'
+      },
+      {
         type: 'gallery',
         images: [
           {
             src: 'Media\\sääpallo_7.jpeg',
-            caption: 'Juuri tulostettu gps-trackerin gimbal-mekanismi',
+            caption: 'Juuri tulostettu gps-trackerin gimbal-mekanismin osa',
             isPortrait: false
           },
           {
@@ -146,9 +218,22 @@ const projectDetails = {
             caption: '3D-tulostettu kamerateline',
             isPortrait: false
           },
-          
+          {
+            src: 'Media\\sääpallo_8.jpeg',
+            caption: 'Kaikki lennolle tuleva elektroniikka poislukien valot ja kaiuttimet',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_11.jpeg',
+            caption: 'Osat asennettuina',
+            isPortrait: false
+          },
         ]
       }, 
+      {
+        type: 'text',
+        content: 'Kun laite oli noussut stratosfääriin, se pitää saada hallitusti alas. Tähän tarkoitukseen ompelin laskuvarjon nylonkankaasta. Laskuvarjon muoto on kuusikulmio, yksinkertainen ja toimintavarma. Laskuvarjon koon määrittämiseen käytin pienoisrakettiharrastaja Jordan Hillerin kehittämää laskuria, jolla voi laskea putoamisnopeuden kun lähtötietoina on paino ja laskuvarjon koko.<br>Laskuri: descentratecalculator.onlinetesting.net'
+      },
       {
         type: 'gallery',
         caption: 'Laskuvarjon valmistusta',
@@ -169,109 +254,132 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
-            src: 'Media\\sääpallo_8.jpeg',
-            caption: 'Kaikki lennolle tuleva elektroniikka',
+            src: 'Media\\sääpallo_6.jpeg',
+            caption: 'Lateksinen 1600g sääpallo saapui postissa.',
             isPortrait: false
           },
           {
-            src: 'Media\\sääpallo_11.jpeg',
-            caption: 'Osat asennettuina',
+            src: 'Media\\sääpallo_17.jpeg',
+            caption: 'Laitteisto valmiina lentoon!',
             isPortrait: false
           },
         ]
-    },
-    {
-      type: 'image',
-      content: 'Media\\sääpallo_6.jpeg',
-      caption: 'Lateksinen 1600g sääpallo',
-      isPortrait: true
-    },
-    {
-      type: 'image',
-      content: 'Media\\sääpallo_17.jpeg',
-      caption: 'Valmiina lentoon!',
-      isPortrait: false
-    },
-    {
-      type: 'image',
-      content: 'Media\\sääpallo_1.jpeg',
-      caption: 'Sääpallossa melkein tarvittava määrä heliumia',
-      isPortrait: true
-    },
-    {
-      type: 'gallery',
-      caption: 'Kuvia lennosta.',
-      images: [
-        {
-          src: 'Media\\sääpallo_20.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_21.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_22.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_23.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_24.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_32.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_31.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_34.jpeg ',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_25.jpeg',
-          isPortrait: false
-        },        
-      ] 
-    },
-    {
-      type: 'image',
-      content: 'Media\\sääpallo_19.png',
-      caption: '35km',
-      isPortrait: false
-    },
-    {
-      type: 'gallery',
-      caption: 'Toteutunut gps:llä tallennettu lentoreitti. Hyötykuorma laskeutui n. 8km päähän ennustetusta paikasta.',
-      images: [
-        {
-          src: 'Media\\sääpallo_33.png',
-          isPortrait: false
-        },
-        {
-          src: 'Media\\sääpallo_28.png',
-          isPortrait: false
-        },
-      ]
-    },
-    
-    
-    
+      },
+      {
+        type: 'image',
+        content: 'Media\\sääpallo_17.jpeg',
+        caption: 'Valmiina lentoon!',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Kun laitteisto oli viimein valmis ja testattu, alkoi lennon valmistelut. Valmisteluihin kuului:<br>- Luvan hakeminen lennolle Trafilta.<br>- Heliumpullon vuokraus.<br>- Lentorataennusteen tekeminen ja sopivan ajankohdan suunnittelu<br>- Laitteiston viimeiset valmistelut. Heliumpullon, läppärin sekä radiovastaanottimen ja muiden tarvikkeiden pakkaaminen autoon edellisenä iltana. <br><br>Lentorataennuste tehtiin Cambridgen yliopiston kehittämällä ohjelmalla: predict.sondehub.org'
+      },
+      {
+        type: 'image',
+        content: 'Media\\sääpallo_1.jpeg',
+        caption: 'Sääpallossa melkein tarvittava määrä heliumia',
+        isPortrait: true
+      },
+      {
+        type: 'text',
+        content: 'Kun pallo oli täytetty, radiovastaanotin valmiina, kamerat päällä ja viimeinen lupa saatu lennonjohdolta, pallo päästettiin ilmaan. Sitten pakattiin tavarat nopeasti auton kyytiin ja lähdettiin seuraamaan palloa laskeutumispaikkaan kuunnellen sitä samaan aikaan läppärillä radiovastaanottimen ja auton katolla olevan antennin avulla.'
+      },
+      {
+        type: 'gallery',
+        caption: 'Kuvia lennosta.',
+        images: [
+          {
+            src: 'Media\\sääpallo_20.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_21.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_22.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_23.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_24.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_32.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_31.png',
+            isPortrait: false
+          }        
+        ] 
+      },
+      {
+        type: 'image',
+        content: 'Media\\sääpallo_19.png',
+        caption: '35km',
+        isPortrait: false
+      },
+      {
+        type: 'image',
+        content: 'Media\\sääpallo_35.png',
+        caption: 'Videosta kootuista kuvankaappauksista tehty panoraamakuva',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Laitteen reittiä seurattiin koko lennon ajan, jonka ansiosta laskeutumispaikkaa pystyi arvioimaan tarkemmin kuin ennusteessa. Tämän ansiosta sen laskeutumien puiden taakse metsään nähtiin auton kyydistä. Lennolla oli tuuria mukana, laskeutumispaikka olisi hyvinkin voinut olla esimerkiksi puun latva, lampi tai muu vastaava. Kuitenkin reilun kolmen tunnin kuluttua pallon päästämisestä ilmaan, se laskeutui harvaan metsään jäämättä puuhun jumiin. (lukuunottamatta laskuvarjoa)'
+      },
+      {
+        type: 'gallery',
+        caption: 'Laskeutunut sääpallon hyötykuorma',
+        images: [
+          {
+            src: 'Media\\sääpallo_34.jpeg ',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_25.jpeg',
+            isPortrait: false
+          },
+        ]
+      },        
+      {
+        type: 'gallery',
+        caption: 'Toteutunut gps:llä tallennettu lentoreitti punaisella.<br>Ennustettu lentoreitti mustalla.  <br>Hyötykuorma laskeutui n. 8km päähän ennustetusta paikasta.',
+        images: [
+          {
+            src: 'Media\\sääpallo_33.png',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\sääpallo_36.jpeg',
+            isPortrait: false
+          },
+        ]
+      },
+      {
+        type: 'image',
+        content: 'Media\\sääpallo_30.png',
+        caption: 'Video sääpallon lennosta',
+        caption: 'Lämpötilat koko lennon ajalta.Vaaka-akselilla aika.<br>Keltainen: akun lämpötila<br>Vihreä: sisälämpötila<br>Sininen: ulkolämpötila'
+      },
+      
+      
 
 
-    {
-      type: 'video',
-      content: 'https://www.youtube.com/embed/m2tmNn_AIf0',
-      caption: 'Video sääpallon lennosta',
-      isPortrait: false
-    },
-    
+      {
+        type: 'video',
+        content: 'https://www.youtube.com/embed/m2tmNn_AIf0',
+        caption: 'Video sääpallon lennosta',
+        isPortrait: false
+      },
+      
 
    
 
@@ -281,14 +389,14 @@ const projectDetails = {
   },
   pienoisraketit: {
     title: 'Pienoisraketit',
-    description: 'Erilaisten pienoisrakettien suunnittelu ja rakentaminen',
-    details: 'Tässä projektissa suunnittelen ja rakennan erilaisia pienoisraketteja. Projekti sisältää sekä kaupallisia rakettimoottoreja että omia kiinteää polttoainetta käyttäviä prototyyppejä.',
+    description: '',
+    details: '',
     technologies: ['CAD', 'Aerodynamiikka', 'Komposiitit', 'Elektroniikka', 'Arduino', '3D-tulostus', 'Rakettimoottorit', 'Laskuvarjot'],
     year: '~2020 lähtien',
     contentSections: [
       {
         type: 'text',
-        content: 'Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitieteet ja elektroniikka. Projektin aikana olen oppinut paljon eri tekniikoista ja materiaalien käytöstä.'
+        content: 'Tässä en oikeastaan esittele yksittäistä projektia, vaan useampaa sellaista. Oikeastaan koko rakettiharrastustani. Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitekniikka, elektroniikka ja fysiikka.'
       },
       {
         type: 'gallery',
@@ -453,14 +561,39 @@ const projectDetails = {
   },
   lentoratasimulaatio: {
     title: 'Raketin lentoratasimulaatio & työntötestipenkki',
-    description: 'Työkalut rakettien suorituskyvyn mittaamiseen ja ennustamiseen',
-    details: 'Projekti yhdistää fysiikkapohjaisen lentoratasimulaation ja fyysisen työntötestipenkin rakettimoottorien testaamiseen. Simulointi perustuu reaalimaailman mittausdataan.',
+    description: '',
+    details: '',
     technologies: ['Python', '3D-tulostus', 'Arduino', 'Voima-anturi', 'RTC-kello'],
     year: '2024',
     contentSections: [
       {
         type: 'text',
-        content: 'Lentoratasimulaattori on Python-pohjainen työkalu, joka mallintaa raketin lentoa erilaisten muuttujien pohjalta. Se huomioi painon, työntövoiman, ilmanvastuksen ja tuuliolosuhteet.'
+        content: 'Tämä projekti oli osa ESA:n Fly A Rocket! -kurssia, jonka kävin vuonna 2024. Yksi kurssin tehtävistä oli jatkokehittää kurssilta saatua Python-lentoratasimulaattoria, joka oli aluksi hyvin yksinkertainen ja toimi vain yhdessä ulottuvuudessa. Tehtävänä oli mahdollistaa raketin liike simulaatiossa toisessa ulottuvuudessa, simuloida raketin pystyakselin suuntaisen kiihtyvyysmittarin mittaama kiihtyvyys, sekä muita muutoksia.<br><br>Innostuin kuitenkin jatkamaan simulaattorin kehitystä pidemmälle, lisäsin siihen mahdollisuuden käyttää tekstitiedostossa olevaa moottorin työntövoimadataa. Rakensin työntövoiman mittaamiseen testipenkin, joka mittaa venymäliuska-anturilla 33Hz näytteenottotaajuudella rakettimoottorin työntövoimaa ja tallentaa sen microSD-kortille tekstitiedostoksi. Simulaattori ottaa tämän kyseisen tekstitiedoston sisään ja simuloi raketin lentoradan sen perusteella. Näin saadaan tarkempi ennuste, kuin alkuperäisellä simulaattorilla, jossa työntövoima oli koko simulaation ajan vakio.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\farsim_5.jpeg',
+        caption: 'Työntötestipenkin elektroniikka protolaudalla.',
+        isPortrait: false
+      },
+      {
+        type: 'video',
+        content: 'Media\\farsim_9.mp4',
+        caption: 'Sähkösytyttimen testi (ja valmis elektroniikkakortti)',
+        autoplay: true,
+        loop: true,
+        muted: true,
+        preload: "auto"
+      },
+      {
+        type: 'video',
+        content: 'https://www.youtube.com/embed/XP5ysh523F0',
+        caption: 'Rakettimoottorin TSP G35-6 työntötesti.<br>Impulssi: 97.7Ns<br>Keskimääräinen työntövoima: 22N<br>Suurin työntövoima: 69.2N',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Mittauksen jälkeen syötin datan simulaattoriin josta sain tuloksena seuraavat tiedot:.'
       },
       {
         type: 'gallery',
@@ -485,35 +618,29 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Simulaattorissa voi suunnitella raketin lentoradan pienimpienkin yksityiskohtien tarkkuudella ja testata eri parametrien vaikutusta.'
+        content: 'Tein myös Excel-tiedoston, jolla dataa voi tutkia tarkemmin ja piirtää siitä käyrän.'
       },
       {
         type: 'image',
-        content: 'Media\\farsim_5.jpeg',
-        caption: 'Työntötestipenkin elektroniikka',
+        content: 'Media\\farsim_10.jpg',
+        caption: 'Mittausdata Excelissä',
         isPortrait: false
       },
       {
-        type: 'video',
-        content: 'Media\\farsim_9.mp4',
-        caption: 'Sähkösytytin',
-        autoplay: true,
-        loop: true,
-        muted: true,
-        preload: "auto"
+        type: 'text',
+        content: 'Seuraavaksi oli aika kokeilla miten simulaattorin data toimii käytännössä. Tähän tarkoitukseen minulla ei ollut kuitenkaan kunnollisia laitteita millä olisi voinut mitata esim. raketin kiihtyvyyttä tai korkeutta. Kuvasin kuitenkin raketin lennon fpv-lennokilla, jossa oli korkeusmittari. Näin pystyin arvioimaan karkeasti, että raketti nousi suunnilleen simuloituun korkeuteen. Video lennosta alla:'
       },
-      {
-        type: 'video',
-        content: 'https://www.youtube.com/embed/XP5ysh523F0',
-        caption: 'Rakettimoottorin TSP G35-6 työntötesti.<br>Impulssi: 97.7Ns<br>Keskimääräinen työntövoima: 22N<br>Suurin työntövoima: 69.2N',
-        isPortrait: false
-      }, 
       {
         type: 'image',
         content: 'Media\\raketit_6.jpeg',
         caption: 'Tämän simulaattorin ensimmäinen koekaniini',
         isPortrait: true
-      }
+      },
+      {
+        type: 'video',
+        content: 'https://www.youtube.com/embed/ihPFJYHEsq8',
+        caption: 'Tinttiraketin lento',
+      },
     ]
   },
   tvc: {
@@ -529,25 +656,251 @@ const projectDetails = {
       },
       {
         type: 'image',
-        content: 'https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        content: 'Media\\tvc_16.jpeg',
         caption: 'TVC-raketin moottorijärjestelmä',
         isPortrait: true
       },
       {
-        type: 'text',
-        content: 'Raketin ohjausjärjestelmä perustuu Arduino-mikrokontrolleriin, IMU-anturiin ja PID-säätöalgoritmiin. Järjestelmä mittaa raketin asentoa ja korjaa sitä reaaliajassa ohjaamalla servomoottoreita.'
+        type: 'gallery',
+        caption: 'Gimbalin kehitystä.',
+        images: [
+          {
+            src: 'Media\\tvc_28.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_4.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_2.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_3.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_5.jpeg',
+            isPortrait: false
+          },
+        ]
       },
       {
-        type: 'image',
-        content: 'https://images.unsplash.com/photo-1581089778245-3ce67677f718?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        caption: 'Ohjauselektroniikka asennettuna',
-        isPortrait: true
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_15.jpeg',
+            caption: '.',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_36.png',
+            caption: 'Raketin kokonaisrakenne.',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_37.png',
+            caption: 'Raketin kokonaisrakenne.',
+            isPortrait: false
+          },
+          
+        ]
       },
       {
-        type: 'video',
-        content: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        caption: 'TVC-raketin testivideo'
-      }
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_38.png',
+            caption: 'Raketin kokonaisrakenne.',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_40.mp4',
+            caption: 'Laskuvarjon avausmekanismin 1. versio.',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_42.mp4',
+            caption: 'Gimbalin 1. versio.',
+            isPortrait: false,
+            muted: true
+          },
+          {
+            src: 'Media\\tvc_41cc.mp4',
+            caption: 'Moottorin kanssa.',
+            isPortrait: false,
+          },
+          
+          
+        ]
+      },
+
+
+      {
+        type: 'gallery',
+        caption: 'Nokan valmistus hiilikuidusta neljästä osasta.',
+        images: [
+          {
+            src: 'Media\\tvc_10.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_13.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_8.jpeg',
+            isPortrait: false
+          },
+          { 
+            src: 'Media\\tvc_30.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_31.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_34.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_6.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_7.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_14.jpeg',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_17.jpeg',
+            isPortrait: false,
+            caption: 'Osien tulostusta.'
+          },
+          {
+            src: 'Media\\tvc_18.jpeg',
+            isPortrait: false,
+          },
+          {
+            src: 'Media\\tvc_19.jpeg',
+            caption: 'Osien UV-kovetus',
+            isPortrait: false
+          }
+        ]
+      },
+      { 
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_23.jpeg',
+            caption: 'Rungon ja gimaalin 2. versio',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_26.jpeg',
+            caption: '',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\tvc_24.jpeg',
+            caption: 'Sähkösytytin.',
+            isPortrait: false
+          },
+          
+          
+        ]
+      },
+
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_45.jpeg',
+            caption: 'Koko ohjainkortin elektroniikka protolaudalla.'
+          },
+          {
+            src: 'Media\\tvc_46.jpeg',
+            caption: 'Raketin kauko-ohjaimen prototyyppi. Kuvassa Arduino Nano ja HC-11 radiomoduuli.'
+          },
+          {
+            src: 'Media\\tvc_48.jpeg',
+            caption: 'PCB:n cad-kuva.'
+          },
+          {
+            src: 'Media\\tvc_51.jpeg',
+            caption: 'Ohjainkortin rakentelua.'
+          },
+          {
+            src: 'Media\\tvc_52.jpeg',
+          },
+          {
+            src: 'Media\\tvc_50.jpeg',
+            caption: 'Kasattuna.'
+          },
+          {
+            src: 'Media\\tvc_49.jpeg',
+            caption: 'kortti asennettu.'
+          },
+        ]
+      },
+      {
+        type: 'gallery',
+        caption: 'Ohjainkortin toinen versio.',
+        images: [
+          {
+            src: 'Media\\tvc_53.jpeg',
+          },
+          {
+            src: 'Media\\tvc_54.jpeg',
+          },
+          {
+            src: 'Media\\tvc_55.jpeg',
+          }
+        ]
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\tvc_47cc.mp4',
+            caption: 'Sähkösytyttimen testausta.'
+          },
+          {
+            src: 'Media\\tvc_56cc.mp4',
+            caption: 'Mielummin ulkona....'
+          },
+          {
+            src: 'Media\\tvc_27cc.mp4',
+            caption: 'Aktiivisen vakautuksen demonstrointia.'
+          },
+          {
+            src: 'Media\\tvc_43.mp4',
+            caption: 'Moottorin kanssa testipenkissä.'
+          },
+          {
+            src: 'Media\\tvc_44.mp4',
+            caption: 'Aina ei onnistu. Järjestelmä boottasi kun moottori syttyi.'
+          },
+          
+        ]
+      },
     ]
   },
   firefly: {
@@ -557,6 +910,12 @@ const projectDetails = {
     technologies: ['Elektroniikka', '3D-tulostus', 'GPS', 'FPV-videolinkki', 'Radio-ohjaus'],
     year: '2024 - 2025',
     contentSections: [
+      {
+        type: 'image',
+        content: 'Media\\firefly_12.jpeg',
+        caption: 'Firefly-lennokki valmiina lentoon',
+        
+      },
       {
         type: 'text',
         content: 'Firefly-lennokki on suunniteltu FPV-lennätykseen, jossa lennättäjä näkee lennättäessään lennokista lähetettyä videokuvaa. Projekti sisälsi lennokin mekaanisen suunnittelun, elektroniikan kokoamisen ja ohjelmiston integroinnin.'
@@ -570,22 +929,59 @@ const projectDetails = {
         images: [
           {
             src: 'Media\\firefly_2.jpeg',
-            caption: 'Lennokin elektroniikkajärjestelmä',
+            caption: 'Rakentelua',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\firefly_14.jpeg',
+            caption: 'Antenni, radiovastaanotin, flight controller ja lediohjain',
             isPortrait: false
           },
           {
             src: 'Media\\firefly_3.jpeg',
-            caption: 'Lennokki ilmassa',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\firefly_1.jpeg',
-            caption: 'Lennokin etuosa',
+            caption: 'Kamera',
             isPortrait: false
           }
         ],
-        caption: 'Firefly-lennokin eri kuvakulmia ja komponentteja'
       },
+      {
+        type: 'gallery',
+        caption: '21700 litium-ion akkupakettien eri konfiguraatiot',
+        images: [
+          {
+            src: 'Media\\firefly_8.jpeg',
+            caption: '4S2P',
+            isPortrait: false
+          }, 
+          {
+            src: 'Media\\firefly_9.jpeg',
+            caption: '4S1P',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\firefly_10.jpeg',
+            caption: 'Telemetriatiedot ohjaimen näytollä',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\firefly_11.jpeg',
+            caption: 'Akku asennettuna',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\firefly_12.jpeg',
+            isPortrait: false
+          },
+        ]
+      },
+
+
       {
         type: 'image',
         content: 'Media\\firefly_1.jpeg',
@@ -658,6 +1054,12 @@ const projectDetails = {
             isPortrait: false
           }
         ],
+      },
+      {
+        type: 'video',
+        content: 'Media\\aalto1_2.mp4',
+        caption: '18.6.2024 Aalto 1 morsettaa "A-A-L-T-O-1". Reilu kaksi kuukautta ennen kuin se paloi maan ilmakehässä.',
+        isPortrait: false
       }
     ]
   },
@@ -764,7 +1166,7 @@ const projectDetails = {
   },
   planeettakamera: {
     title: 'Älypuhelimesta planeettakamera',
-    description: 'Älypuhelimen muuntaminen kaukoputken planeettakameraksi',
+    description: '',
     details: 'Projekti muuntaa älypuhelimen tehokkaaksi planeettakameraksi kaukoputkeen. Kehitin sovittimen ja ohjelmiston, jotka mahdollistavat planeettojen ja muiden taivaankappaleiden yksityiskohtaisen kuvaamisen ja prosessoinnin.',
     technologies: ['3D-tulostus', 'Optiikka', 'Tähtitiede', 'Kuvankäsittely'],
     year: '2021',
@@ -806,12 +1208,22 @@ const projectDetails = {
             caption: '4. kameramoduuli takaisin kiinni.',
             isPortrait: false
           }
-          
-          
-          
-          
         ]
-      }, 
+      },
+      { 
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\op5t_14.jpeg',
+            caption: '3D-tulostettu kaukoputkikiinnike liimattu puhelimen suojakuoreen.',
+          },
+          {
+            src: 'Media\\op5t_15.jpeg',
+            caption: 'Kiinnikkeen sisäseinät maalattu mattamustalla.',
+          }
+        ]
+      },
+      
       
 
       {
@@ -1022,6 +1434,61 @@ const projectDetails = {
         content: 'Media\\metrover_1.jpeg',
         isPortrait: false
       },
+      {
+        type: 'gallery',
+        caption: 'Ensimmäinen laserleikattu vaijerirumpu',
+        images: [
+          {
+            src: 'Media\\metrover_23.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\metrover_24.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\metrover_19.jpeg',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'image',
+        caption: 'Prototyyppiversio koko järjestelmästä',
+        content: 'Media\\metrover_25.jpeg',
+        isPortrait: true
+      },
+      {
+        type: 'gallery',
+        caption: '',
+        images: [
+          {
+            src: 'Media\\metrover_20cc.mp4',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\metrover_21cc.mp4',
+            isPortrait: false
+          },
+          
+        ]
+      },
+
+
+      
+
+      
+      
+      
+      
+
+
+
+
+
+
+
     ]
   }
 };
@@ -1059,6 +1526,9 @@ function showFullscreenImage(src, galleryImages = null, caption = null) {
   updateFullscreenContent(fullscreenContainer);
   
   document.body.appendChild(fullscreenContainer);
+  
+  // Varmista että container on skrollattu ylös
+  fullscreenContainer.scrollTop = 1;
   
   // Väliaikaisesti poista modaalin ESC-kuuntelija
   if (window.modalEscListener) {
@@ -1125,6 +1595,9 @@ function showFullscreenVideo(src, galleryItems = null, caption = null, isYouTube
   updateFullscreenContent(fullscreenContainer);
   
   document.body.appendChild(fullscreenContainer);
+  
+  // Varmista että container on skrollattu ylös
+  fullscreenContainer.scrollTop = 1;
   
   // Väliaikaisesti poista modaalin ESC-kuuntelija
   if (window.modalEscListener) {
@@ -1453,6 +1926,12 @@ function initializeGalleryAfterModalOpens() {
   setTimeout(() => {
     initGalleryImages();
     
+    // Varmista että modaali-ikkuna on skrollattu ylös
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+      modal.scrollTop = 0;
+    }
+    
     // Käynnistä kaikki videot, joilla on autoplay-ominaisuus
     document.querySelectorAll('video[autoplay]').forEach(video => {
       // Varmista että video on mykistetty autoplayta varten
@@ -1487,6 +1966,9 @@ function showProjectDetails(projectId) {
   
   // Estä sivuston skrollaus kun modaali on auki
   document.body.style.overflow = 'hidden';
+  
+  // Varmista että sivu skrollataan ylös ennen modaalin näyttämistä
+  window.scrollTo(0, 0);
   
   modalContent.innerHTML = `
     <span class="close-modal">&times;</span>
@@ -1594,7 +2076,17 @@ function showProjectDetails(projectId) {
     </div>
   `;
   
+  // Näytä modaali
   modal.style.display = 'block';
+  
+  // TÄRKEÄ: Varmista että modaali (ei modalContent) on skrollattu ylös
+  // Tässä modal on se elementti jolla on overflow-y: auto CSS-määritys
+  modal.scrollTop = 0;
+  
+  // Lisätään ajastettu skrollaus ylös, jotta varmistetaan että sisältö on ylhäällä myös kuvien latauduttua
+  setTimeout(() => {
+    modal.scrollTop = 0;
+  }, 100);
   
   // Alustetaan galleriakuvat modaalin avauduttua
   initializeGalleryAfterModalOpens();
@@ -1777,6 +2269,9 @@ function openYouTubeDirectly(src, caption) {
     // Lisää elementit bodyyn
     document.body.appendChild(container);
     document.body.appendChild(closeButtonContainer);
+    
+    // Varmista että container on skrollattu ylös
+    container.scrollTop = 1;
     
     // Lisää sulkemislogiikka rastinapille
     closeButton.addEventListener('click', (e) => {

@@ -2114,3 +2114,18 @@ html[data-theme="dark"] .forced-darkening {
     display: none;
   }
 }
+
+/* Tervehdysotsikko */
+.greeting-header {
+  text-align: left;
+  margin-left: 0;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+/* Työkokemus & koulutus -osion tyyli */
+#experience .section-title {
+  margin-bottom: 8rem;
+}
