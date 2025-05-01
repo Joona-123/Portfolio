@@ -209,8 +209,13 @@ const projectDetails = {
         type: 'gallery',
         images: [
           {
+            src: 'Media\\sääpallo_37.jpg',
+            caption: 'gps-trackerin gimbal-mekanismi',
+            isPortrait: false
+          },
+          {
             src: 'Media\\sääpallo_7.jpeg',
-            caption: 'Juuri tulostettu gps-trackerin gimbal-mekanismin osa',
+            caption: 'tulostettu gimbal-mekanismin osa',
             isPortrait: false
           },
           {
@@ -237,7 +242,7 @@ const projectDetails = {
       {
         type: 'gallery',
         caption: 'Laskuvarjon valmistusta',
-        images: [
+        images: [          
           {
             src: 'Media\\sääpallo_15.jpeg',
             isPortrait: false
@@ -266,14 +271,8 @@ const projectDetails = {
         ]
       },
       {
-        type: 'image',
-        content: 'Media\\sääpallo_17.jpeg',
-        caption: 'Valmiina lentoon!',
-        isPortrait: false
-      },
-      {
         type: 'text',
-        content: 'Kun laitteisto oli viimein valmis ja testattu, alkoi lennon valmistelut. Valmisteluihin kuului:<br>- Luvan hakeminen lennolle Trafilta.<br>- Heliumpullon vuokraus.<br>- Lentorataennusteen tekeminen ja sopivan ajankohdan suunnittelu<br>- Laitteiston viimeiset valmistelut. Heliumpullon, läppärin sekä radiovastaanottimen ja muiden tarvikkeiden pakkaaminen autoon edellisenä iltana. <br><br>Lentorataennuste tehtiin Cambridgen yliopiston kehittämällä ohjelmalla: predict.sondehub.org'
+        content: 'Kun laitteisto oli viimein valmis ja testattu, alkoi lennon valmistelut. Valmisteluihin kuului mm:<br>- Luvan hakeminen lennolle Trafilta.<br>- Heliumpullon vuokraus.<br>- Lentorataennusteen tekeminen ja sopivan ajankohdan suunnittelu<br>- Laitteiston viimeiset valmistelut. Heliumpullon, läppärin sekä radiovastaanottimen ja muiden tarvikkeiden pakkaaminen autoon edellisenä iltana. <br><br>Lentorataennuste tehtiin Cambridgen yliopiston kehittämällä ohjelmalla: predict.sondehub.org'
       },
       {
         type: 'image',
@@ -396,76 +395,79 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tässä en oikeastaan esittele yksittäistä projektia, vaan useampaa sellaista. Oikeastaan koko rakettiharrastustani. Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitekniikka, elektroniikka ja fysiikka.'
+        content: 'Tässä en oikeastaan esittele yksittäistä projektia, vaan useampaa sellaista. Oikeastaan koko rakettiharrastustani. Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitekniikka, elektroniikka ja fysiikka. Raketteihin käytän kaupallisia kiinteäpolttoaineisia kertakäyttöisiä rakettimoottoreita. Suunnittelen raketit aina huolellisesti ja simuloin ne käyttämällä mm. OpenRocket-simulaattoria. Siten varmistan että raketti on vakaa ja se voidaan laukaista turvallisesti. Simulaattorin avulla saan laskettua lennosta muitakin tietoja kuten maksimikorkeus, nopeus, kiihtyvyys, lennon kesto, optimaalinen avausaika laskuvarjolle jne jne... Käytän rakettien laukaisuun radio-ohjattavaa etäsytytintä, jotta moottorin voi sytyttää etänä kauempaa.'
+      },
+      {
+        type: 'text',
+        content: 'Tinttiraketti:<br>Tein kopion sajakuvista tutusta Tintin kuuraketista. Piirsin raketin Autodesk Fusion CAD-ohjelmalla käyttäen apuna netistä löytyviä kuvia. Runko valmistettiin 3D-tulostamalla ja siivekkeet hiilikuitulevystä. Alla on kolme videota lennoista. Ensimmäisessä yrityksessä moottorit räjähtivät. Toiseen yritykseen vaihdettiin moottorin valmistajaa ja neljän moottorin tilalle yksi isompi moottori. Kuitenkin tämäkin moottori oli viallinen ja räjähti kesken lennon. Lennon jälkeen maasta löytyi palamattomia polttoaineen palasia. Moottorivalmistajan mukaan tuotantoerässä oli käytetty väärää polttoainetta jolla oli liian suuri palonopeus. Moottorit vaihdettiin toimiviin ja kolmas lento onnistui täydellisesti.'
+      },
+      {
+        type: 'gallery',
+        images: [
+          
+          {
+            src: 'https://www.youtube.com/embed/aGscWCjO5II',
+            caption: '1. laukaisuyritys',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_10.mp4',
+            caption: 'Moottori räjähti nousun aikana',
+            isPortrait: false,
+            muted: false
+          },
+          {
+            src: 'https://www.youtube.com/embed/ihPFJYHEsq8',
+            caption: 'Onnistunut lento',
+            isPortrait: false
+          },
+          {
+          
+            
+            src: 'Media\\raketit_11.jpeg',
+            caption: 'Räjähdys toisella lennolla',
+            isPortrait: false
+          },
+          
+        ]
+      },
+      {
+        type: 'text',
+        content: 'Zaga 2.0:'
+      },
+      {
+        type: 'image',
+        content: 'Media\\raketit_1.jpeg',
+        caption: 'Zaga 2.0',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Runko valmistettiin pvc-putkesta, siivekkeet sekä moottoritelineet lasikuidusta ja nokka ja laukaisukiskokiinnikkeet 3D-tulostamalla. Ensilento onnistui täydellisesti mutta toisella lennolla yksi neltästä moottorista räjähti jonka takia lennon korkeus jäi pieneksi ja laskuvarjo ehti juuri ja juuri aukenemaan.'
       },
       {
         type: 'gallery',
         images: [
           {
-            src: 'https://www.youtube.com/embed/ihPFJYHEsq8',
-            caption: 'Rakettimalli suunnitteluvaiheessa',
-            isPortrait: false
-          },
-          {
-            src: 'https://www.youtube.com/embed/aGscWCjO5II',
-            caption: 'Rakettimalli suunnitteluvaiheessa',
-            isPortrait: false
-          },
-          {
             src: 'https://www.youtube.com/embed/m8nETrFVndA',
-            caption: 'Rakettimalli suunnitteluvaiheessa',
-            isPortrait: false
-          }
+            caption: '1. lento',
+          },
+          {
+            src: 'https://www.youtube.com/embed/JSLwPJCCmUM',
+            caption: '2. lento',
+          },
+          
         ]
       },
-
-      
-      
-
-
-
       {
-        type: 'video',
-        content: 'https://www.youtube.com/embed/JSLwPJCCmUM',
-        caption: 'Rakettimalli suunnitteluvaiheessa',
-        isPortrait: false
+        type: 'text',
+        content: 'Harrastan myös lennokkeja joten tietenkin tätäkin piti kokeilla:'
       },
-      
-      
       {
         type: 'video',
         content: 'https://www.youtube.com/embed/lteY5EDLjto',
-        caption: 'Rakettimalli suunnitteluvaiheessa',
+        caption: 'Rakettimoottorit lennokissa',
         isPortrait: false
-      },
-      {
-        type: 'video',
-        content: 'Media\\raketit_8cc.mp4',
-        caption: 'Rakettimalli suunnitteluvaiheessa',
-        isPortrait: false
-      },
-      {
-        type: 'gallery',
-        images: [
-          {
-            src: 'Media\\raketit_10.mp4',
-            caption: 'Rakettimalli suunnitteluvaiheessa',
-            isPortrait: false,
-            muted: false
-          },
-          {
-            src: 'Media\\raketit_11.jpeg',
-            caption: 'Räjähdys',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\raketit_7cc.mp4',
-            caption: 'Räjähdys',
-            isPortrait: false,
-            muted: false
-          }
-
-        ]
       },
       {
         type: 'text',
@@ -526,15 +528,58 @@ const projectDetails = {
           {
             src: 'Media\\raketit_24.jpeg',
             isPortrait: false,
-          },
+          },          
+        ]
+      },
+      {
+        type: 'gallery',
+        images: [
           {
             src: 'Media\\raketit_26.jpeg',
+            caption: 'Siivekkeet',
             isPortrait: false
           },
+          
+          {
+            src: 'Media\\raketit_36.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_37.jpeg',
+            caption: 'Liimausjigi',
+            isPortrait: false
+          },
+
           {
             src: 'Media\\raketit_27.jpeg',
             isPortrait: false
           },
+          {
+            src: 'Media\\raketit_39.jpg',
+            caption: 'mittauslektroniikka',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_45.jpg',
+            caption: 'LiPo-akut',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_41.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_44.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_46.jpg',
+            caption: 'Vaijerilenkki laskuvarjon narun kiinnitykselle',
+            isPortrait: false
+          },
+          
+
+
           {
             src: 'Media\\raketit_28.jpeg',
             isPortrait: false
@@ -546,8 +591,54 @@ const projectDetails = {
           {
             src: 'Media\\raketit_30.jpeg',
             isPortrait: false
-          },          
+          },
+          {
+            src: 'Media\\raketit_35.jpeg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_31.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_32.jpg',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_33.jpg',
+            isPortrait: false
+          },
+          
+          
+
+
+
+
         ]
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\raketit_34.jpg',
+            caption: 'Raketti laukaisutelineen sisällä',
+            isPortrait: false
+          },
+        ]
+      },
+
+
+      {
+        type: 'video',
+        content: 'Media\\raketit_7cc2.mp4',
+        caption: 'Viallinen moottori',
+        isPortrait: false
+      },
+      {
+        type: 'image',
+        content: 'Media\\raketit_49.jpg',
+        caption: 'Raketin moottoripäädyn jäännökset',
+        isPortrait: false
       },
       
       
@@ -568,7 +659,7 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tämä projekti oli osa ESA:n Fly A Rocket! -kurssia, jonka kävin vuonna 2024. Yksi kurssin tehtävistä oli jatkokehittää kurssilta saatua Python-lentoratasimulaattoria, joka oli aluksi hyvin yksinkertainen ja toimi vain yhdessä ulottuvuudessa. Tehtävänä oli mahdollistaa raketin liike simulaatiossa toisessa ulottuvuudessa, simuloida raketin pystyakselin suuntaisen kiihtyvyysmittarin mittaama kiihtyvyys, sekä muita muutoksia.<br><br>Innostuin kuitenkin jatkamaan simulaattorin kehitystä pidemmälle, lisäsin siihen mahdollisuuden käyttää tekstitiedostossa olevaa moottorin työntövoimadataa. Rakensin työntövoiman mittaamiseen testipenkin, joka mittaa venymäliuska-anturilla 33Hz näytteenottotaajuudella rakettimoottorin työntövoimaa ja tallentaa sen microSD-kortille tekstitiedostoksi. Simulaattori ottaa tämän kyseisen tekstitiedoston sisään ja simuloi raketin lentoradan sen perusteella. Näin saadaan tarkempi ennuste, kuin alkuperäisellä simulaattorilla, jossa työntövoima oli koko simulaation ajan vakio.'
+        content: 'Tämä projekti oli osa ESA:n Fly A Rocket! -kurssia, jonka kävin vuonna 2024. Yksi kurssin tehtävistä oli jatkokehittää kurssilta saatua Python-lentoratasimulaattoria, joka oli aluksi hyvin yksinkertainen ja toimi vain yhdessä ulottuvuudessa. Tehtävänä oli mahdollistaa raketin liike simulaatiossa toisessa ulottuvuudessa, simuloida raketin pystyakselin suuntaisen kiihtyvyysmittarin mittaama kiihtyvyys, sekä muita muutoksia. Simulaattori perustuu pääosin Newtonin lakeihin, ilmanvastuksen laskukaavaan sekä yksinkertaiseen ilmakehän tiheyden mallinnukseen. <br><br>Innostuin kuitenkin jatkamaan simulaattorin kehitystä pidemmälle, lisäsin siihen mahdollisuuden käyttää tekstitiedostossa olevaa moottorin työntövoimadataa. Rakensin työntövoiman mittaamiseen testipenkin, joka mittaa venymäliuska-anturilla 33Hz näytteenottotaajuudella rakettimoottorin työntövoimaa ja tallentaa sen microSD-kortille tekstitiedostoksi. Simulaattori ottaa tämän kyseisen tekstitiedoston sisään ja simuloi raketin lentoradan sen perusteella. Näin saadaan tarkempi ennuste, kuin alkuperäisellä simulaattorilla, jossa työntövoima oli koko paloajan vakio.'
       },
       {
         type: 'image',
@@ -633,7 +724,7 @@ const projectDetails = {
       {
         type: 'image',
         content: 'Media\\raketit_6.jpeg',
-        caption: 'Tämän simulaattorin ensimmäinen koekaniini',
+        caption: 'Simulaattorin ensimmäinen koekaniini',
         isPortrait: true
       },
       {
@@ -645,20 +736,24 @@ const projectDetails = {
   },
   tvc: {
     title: 'Thrust vector control -raketti',
-    description: 'Ohjattava raketti suuntaukseen perustuvalla moottorin ohjauksella',
-    details: 'Kehitin raketin, joka käyttää työntövektorin ohjausta (TVC) stabiliteetin ylläpitämiseen ja lentosuunnan muuttamiseen. Järjestelmä käyttää gyroskooppi- ja kiihtyvyysantureita sekä servomoottoreita moottorin suuntaamiseen.',
-    technologies: ['Arduino', 'IMU', 'Barometri', 'Servot', '3D-tulostus', 'Komposiitit', 'Radiotekniikka', 'HC-11 Radiokommunikaatio', 'PID-säätö'],
-    year: '2021',
+    description: '',
+    details: '',
+    technologies: ['Arduino', 'IMU', 'Barometri', 'Servot', '3D-tulostus', 'Komposiitit', 'Radiotekniikka', 'HC-12 Radiokommunikaatio', 'PID-säätö'],
+    year: '2021 - Kehitysvaiheessa',
     contentSections: [
       {
         type: 'text',
-        content: 'TVC (Thrust Vector Control) -raketti on edistyneempi versio perinteisestä raketista. Se pystyy hallitsemaan lentoaan suuntaamalla moottoria, mikä mahdollistaa vakaamman lentoradan.'
+        content: 'TVC (Thrust Vector Control) -raketti on edistyneempi versio perinteisestä aerodynaamisesti siivekkeillä vakautetusta raketista. Se toimii samalla tavalla kuin isommatkin kiertoradalle yltävät avaruusraketit. Raketin moottori on gimbaloitu kahdella servolla, joita ohjaa PID-säädin Arduino-ohjainkortilla, joka saa asentotietoa IMU:lta (Inertial Measurement Unit).<br><br>Lisäksi raketissa on servolla toimiva avausmekanismi laskuvarjolle. Laskuvarjon avausta varten korkeustieto mitataan barometriltä, joten laskuvarjon avaus tapahtuu juuri kun raketti lähtee tippumaan alaspäin. Raketin asento ja korkeustiedot lennon ajalta tallennetaan microSD-kortille. '
       },
       {
         type: 'image',
         content: 'Media\\tvc_16.jpeg',
-        caption: 'TVC-raketin moottorijärjestelmä',
+        caption: 'TVC-raketti. Gimbaali alaosassa.',
         isPortrait: true
+      },
+      {
+        type: 'text',
+        content: 'Projekti alkoi gimbal-mekanismin 1. version kehityksellä josta kehitettiin useampi versio kunnes se oli tarpeeksi kevyt ja toimiva.'
       },
       {
         type: 'gallery',
@@ -687,21 +782,25 @@ const projectDetails = {
         ]
       },
       {
+        type: 'text',
+        content: 'Laskuvarjon avausmekanismi oli kumilenkeillä toimiva servolla vapautettava lautanen, joka työntää raketin nokan sekä laskuvarjon ulos. Raketin rungoksi valitsin pienoisrakettikäyttöön tarkoitetun pahviputken, johon kiinnitin 3D-tulostetut kiinnikkeet moottorin gimbaalille, ohjainkortille, laskuvarjon avausmekanismille sekä servoille. Raketin ohjauskortiksi suunnittelin aluksi käsin tehtyä PCB:tä, mutta vaihdoin sen myöhemmin itse suunniteltuun kustomoituun piirilevyyn, joka tilattiin piirilevyvalmistaja PCBWay:ltä kiinasta.Laskuvarjon avausmekanismi oli kumilenkeillä toimiva servolla vapautettava lautanen, joka työntää raketin nokan sekä laskuvarjon ulos. Raketin rungoksi valitsin pienoisrakettikäyttöön tarkoitetun pahviputken, johon kiinnitin 3D-tulostetut kiinnikkeet moottorin gimbaalille, ohjainkortille, laskuvarjon avausmekanismille sekä servoille. Raketin ohjauskortiksi suunnittelin aluksi käsin tehtyä PCB:tä, mutta vaihdoin sen myöhemmin itse suunniteltuun kustomoituun piirilevyyn, jonka tilasin piirilevyvalmistaja PCBWay:ltä kiinasta.'
+      },
+      {
         type: 'gallery',
         images: [
           {
             src: 'Media\\tvc_15.jpeg',
-            caption: '.',
+            caption: 'Sisuskalut, runko, nokka ja moottori',
             isPortrait: false
           },
           {
             src: 'Media\\tvc_36.png',
-            caption: 'Raketin kokonaisrakenne.',
+            caption: '',
             isPortrait: false
           },
           {
             src: 'Media\\tvc_37.png',
-            caption: 'Raketin kokonaisrakenne.',
+            caption: '',
             isPortrait: false
           },
           
@@ -712,7 +811,7 @@ const projectDetails = {
         images: [
           {
             src: 'Media\\tvc_38.png',
-            caption: 'Raketin kokonaisrakenne.',
+            caption: 'Raketin kokonaisrakenne.<br>Vasemmalta oikealle:<br>Nokka<br>Laskuvarjo<br>Laskuvarjon avausmekanismi<br>Ohjainkortti<br>Gimbalin servot<br>Gimbal<br>Moottori',
             isPortrait: false
           },
           
@@ -741,11 +840,13 @@ const projectDetails = {
           
         ]
       },
-
-
+      {
+        type: 'text',
+        content: 'Valmistin raketin nokan hiilikuidusta. Tein nokan kolmesta osasta joille jokaiselle 3D-tulostin muotit. Lopuksi liimasin osat epoksilla yhteen, kittasin ja maalasin nokan.'
+      },
       {
         type: 'gallery',
-        caption: 'Nokan valmistus hiilikuidusta neljästä osasta.',
+        caption: 'Nokan valmistus hiilikuidusta.',
         images: [
           {
             src: 'Media\\tvc_10.jpeg',
@@ -787,6 +888,10 @@ const projectDetails = {
         ]
       },
       {
+        type: 'text',
+        content: 'Tärkein työkalu projektissa oli Anycubic Photon SLA-3D-tulostin. Tulostusmateriaalina käytin funktionaalisten osien tulostukseen tarkoitettuaSiraya Tech Blu -hartsia. '
+      },
+      {
         type: 'gallery',
         images: [
           {
@@ -805,12 +910,16 @@ const projectDetails = {
           }
         ]
       },
+      {
+        type: 'text',
+        content: 'Raketin järjestelmien kehittyessä pidemmälle, päätin suunnitella gimbalin ja rungon kokonaan uudestaan. Uudessa versiossa moottori tuli kokonaan raketin sisälle, jolla saavutetaan parempi vakaus. Runkoa optimoin kevyemmäksi tekemällä siihen kuusikulmaisia reikiä ja pinnottamalle koko raketin läpinäkyvällä rc-lennokkeihin tarkoitetulla pinnotuskalvolla..'
+      },
       { 
         type: 'gallery',
         images: [
           {
             src: 'Media\\tvc_23.jpeg',
-            caption: 'Rungon ja gimaalin 2. versio',
+            caption: 'Rungon ja gimbalin 2. versio',
             isPortrait: false
           },
           {
@@ -820,14 +929,17 @@ const projectDetails = {
           },
           {
             src: 'Media\\tvc_24.jpeg',
-            caption: 'Sähkösytytin.',
+            caption: 'Sähkösytytin kiinnitettynä liittimiin.',
             isPortrait: false
           },
           
           
         ]
       },
-
+      {
+        type: 'text',
+        content: 'Ohjainkortin aivoina toimi Arduino -yhteensopiva Teensy 4.0 kehitysalusta sen pienen koonsa ja suorituskyvynsä vuoksi. Inertiasensoriksi valitsin MPU9250 breakout boardin koska niitä on helposti saatavilla ja siihen löytyy paljon valmiita Arduino-kirjastoja. Raketin kanssa kommunikointiin käytin HC12 moduulia, joka on helppo ja kevyt vaihtoehto kun halutaan siirtää sarjaporttidataa Arduinosta toiseen. Lisäksi ohjainkortissa oli muutakin elektroniikkaa mm. virranohjaukseen ja moottorin sytytykseen.'
+      },
       {
         type: 'gallery',
         images: [
@@ -837,7 +949,7 @@ const projectDetails = {
           },
           {
             src: 'Media\\tvc_46.jpeg',
-            caption: 'Raketin kauko-ohjaimen prototyyppi. Kuvassa Arduino Nano ja HC-11 radiomoduuli.'
+            caption: 'Raketin kauko-ohjaimen prototyyppi. Kuvassa Arduino Nano ja HC-12 radiomoduuli.'
           },
           {
             src: 'Media\\tvc_48.jpeg',
@@ -856,9 +968,13 @@ const projectDetails = {
           },
           {
             src: 'Media\\tvc_49.jpeg',
-            caption: 'kortti asennettu.'
+            caption: 'Osat asennettu. Alempana Blue Bird M15H -servot gimbalille ja ylempänä KST X08H plus -servo laskuvarjon avausta varten.'
           },
         ]
+      },
+      {
+        type: 'text',
+        content: 'Raketin elektroniikan ja muiden osien kehittyessä ja ohjainkortin vaatiman tilan vähetessä suunnittelin ohjainkortista toisen version, joka vaatisi huomattavasti vähemmän tilaa ohjainkortin asento muuttui vaakatasoon ja sijainti ylemmäs rakettia. Näin sain yksinkertaistettua myös laskuvarjon avausmekanismia, joten koko rakenteesta tuli kevyempi.'
       },
       {
         type: 'gallery',
@@ -901,32 +1017,45 @@ const projectDetails = {
           
         ]
       },
+      {
+        type: 'text',
+        content: 'Raketin kehityksen taustalla oli todella paljon muutakin kehitystä mitä tällä sivulla esittelin. Projektista on jo aikaa, enkä kuvannut jokaista kehitysaskelta ja melko paljon jäi kertomatta, mutta pääkohdat tuli kuitenkin kerrottua.<br><br>Isoin haaste oli ohjainkortin kehittäminen. En ollut ennen piirtänyt ja tilannut piirilevyä kustomoituna, eikä minulla ollut kovin vahvaa elektroniikka- tai koodausosaamista. Projekti kuitenkin opetti aika paljon elektroniikasta, 3D-tulostuksesta, servo-ohjauksesta sekä piirilevyjen CAD-suunnittelusta.<br><br>Projekti jäi kesken kahdesta syystä, sen takia että aiheet olivat minulle uusia ja sen takia että projekti lähti useassa vaiheessa rönsyilemään päätavoitteen ohi. Lisäilin rakettiin kesken projektin useita toimintoja kuten: etäohjaus radiomoduulilla, akkujen latauspiiri, ”on/off IC” virransyötön hallintaan ja muita vastaavia. Nämä asiat olivat tietenkin erittäin mielenkiintoisia ja opettavaisia, mutta lopulta aika ei vain tahtonut riittää ja nyt projekti odottaa varaston laatikossa sen jatkamista.'
+      },
+      
     ]
   },
   firefly: {
     title: 'Firefly FPV-lennokki',
-    description: 'Kotitekoinen FPV-lentolaiteprojekti',
-    details: 'Firefly on itse suunniteltu ja rakennettu FPV-lennokki, joka mahdollistaa first-person-view -lennätyksen videolinkin kautta. Projekti sisältää kaikki vaiheet suunnittelusta rakentamiseen ja testaukseen.',
+    description: '',
+    details: '',
     technologies: ['Elektroniikka', '3D-tulostus', 'GPS', 'FPV-videolinkki', 'Radio-ohjaus'],
     year: '2024 - 2025',
     contentSections: [
       {
+        type: 'text',
+        content: 'Tämän lennokkiprojektin tavoitteena oli saada aikaan kiinteäsiipinen fpv-lennokki, jolla pääsen lentämään luotettavasti muutaman kilometrin päähän radioyhteyttä menettämättä siten että lennokkia on rento lennättää ja kuvata maisemia, pilviä, eläimiä sekä luontoa. <br><br>Valitsin lennokin pohjaksi Haohan Firefly PNP -lennokin, johon rakentelin itse tarvittavat osat ja ominaisuudet. Malliksi päätyi Firefly sen modulaarisuuden vuoksi. Kaikki lennätykseen tarvittavat laitteet mahtuu lennokin omaan kuljetuslaatikkoon, jossa sitä on helppo kuljettaa lennätyskentälle.'
+      },
+      {
+        type: 'text',
+        content: ''
+      },
+      {
         type: 'image',
         content: 'Media\\firefly_12.jpeg',
-        caption: 'Firefly-lennokki valmiina lentoon',
-        
+        caption: 'Haohan Firefly -lennokki',
       },
       {
         type: 'text',
-        content: 'Firefly-lennokki on suunniteltu FPV-lennätykseen, jossa lennättäjä näkee lennättäessään lennokista lähetettyä videokuvaa. Projekti sisälsi lennokin mekaanisen suunnittelun, elektroniikan kokoamisen ja ohjelmiston integroinnin.'
-      },
-      {
-        type: 'text',
-        content: 'Lennokki käyttää pienikokoista videokameraa, joka lähettää kuvaa reaaliajassa maahan. Rakenne on suunniteltu CAD-ohjelmistolla ja osa komponenteista on valmistettu 3D-tulostamalla.'
+        content: 'Lennonohjain: <br>Asensin lennokkiin lennonohjaimen Speedybee F405 wing, joka on lennokin ”aivot”. Lennonohjain on konfiguroitavissa erilaisille lennokeille ja eri tarpeiden mukaan. Konfiguroin siihen mm. seuraavia toimintoja: <br>- Lennokin vakautus<br>- Telemetriatietojen lähetys lähetinmoduulin kautta FPV-laseihin<br>- Automaattilaukaisutoiminto<br>- Automaattinen kotiinpaluu joko kytkimestä tai ohjaussignaalin katketessa<br>- yms. yms...<br><br>Kytkin lennonohjaimeen myös GPS-moduulin, jonka avulla se tietää sijaintinsa.'
       },
       {
         type: 'gallery',
         images: [
+          {
+            src: 'Media\\firefly_24.jpeg',
+            caption: 'GPS-moduuli',
+            isPortrait: false
+          },
           {
             src: 'Media\\firefly_2.jpeg',
             caption: 'Rakentelua',
@@ -937,16 +1066,26 @@ const projectDetails = {
             caption: 'Antenni, radiovastaanotin, flight controller ja lediohjain',
             isPortrait: false
           },
-          {
-            src: 'Media\\firefly_3.jpeg',
-            caption: 'Kamera',
-            isPortrait: false
-          }
         ],
       },
       {
+        type: 'text',
+        content: 'FPV-kamera:<br><br>Asensin lennokkiin DJI O3 air unit -yksikön, johon kuuluu kamera sekä lähetin, joka lähettää kuvaa Goggles 3 -laseihin. O3 lähettää kuvaa 1W teholla 2,4GHz taajuudella. Valmistaja lupaa kuvalähetyksen kantamaksi jopa 10Km, mutta todellisuudessa kuvasignaali yltää luotettavasti vain 3~4Km etäisyydelle.'
+      },
+      {
         type: 'gallery',
-        caption: '21700 litium-ion akkupakettien eri konfiguraatiot',
+        images: [
+          {
+            src: 'Media\\firefly_3.jpeg',
+          },
+        ]
+      },
+      {
+        type: 'text',
+        content: 'Akkupaketti:<br><br>Tein aluksi akkupaketin kahdeksasta samsungin 21700-kennosta, jotka juotin 4S2P kokoonpanoon. Lentoaikaa tällä paketilla sain noin 1–1,5 tuntia riippuen lennätystavasta. Lennokki lensi tällä paketilla vakaasti ja muutenkin hyvin, mutta lentoonlähdöt sekä -nousut olivat melko epävarmoja ja lennokki saattoi sakata heittäessä sitä ilmaan. Ja vastaavasti laskeutumiset olivat aika kovia. Päätin pudottaa akun koon puoleen. Tein akuista 4S1P kokoonpanon, jonka jälkeen lentoonlähdöt ja -nousut sujuivat huomattavasti paremmin. Lentoaika tippui 30-45 minuuttiin.'
+      },
+      {
+        type: 'gallery',
         images: [
           {
             src: 'Media\\firefly_8.jpeg',
@@ -958,48 +1097,80 @@ const projectDetails = {
             caption: '4S1P',
             isPortrait: false
           },
+          {
+            src: 'Media\\firefly_11.jpeg',
+            caption: 'Akku lennokin sisällä',
+            isPortrait: false
+          },
           
         ]
       },
       {
-        type: 'gallery',
-        images: [
-          {
-            src: 'Media\\firefly_10.jpeg',
-            caption: 'Telemetriatiedot ohjaimen näytollä',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\firefly_11.jpeg',
-            caption: 'Akku asennettuna',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\firefly_12.jpeg',
-            isPortrait: false
-          },
-        ]
+        type: 'text',
+        content: 'Ohjauslinkki:<br><br>Lennokin ohjaukseen käytin TBS Crossfire radiomoduulia sekä hieman suuntaavaa antennia. Lähettimen lähetysteho on 2W ja taajuus 868MHz. Matalalla taajuudella ja korkealla lähetysteholla saavutetaan pitkä kantama eli luotettava ohjauslinkki. Ohjaimena käytin mallia Radiomaster TX16S.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\firefly_10.jpeg',
+        caption: 'Telemetriatietoja ohjaimen näytöllä',
+        isPortrait: false
       },
 
 
       {
         type: 'image',
         content: 'Media\\firefly_1.jpeg',
-        caption: 'Firefly-lennokki valmiina lentoon',
+        caption: 'Lennätysreissu aamupakkasessa. Lennätys oli pakko lopettaa kun sormet jäätyi.',
         isPortrait: true
+      },
+      {
+        type: 'text',
+        content: 'Lennokkiprojekti on ollut onnistunut ja lennätystunteja on kertynyt puolen vuoden aikana noin 30 tuntia.<br><br>Lennokin kyydistä otettuja kuvia:'
+      },
+      {
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\firefly_15.jpg',
+          },
+          {
+            src: 'Media\\firefly_16.jpg',
+          },
+          {
+            src: 'Media\\firefly_17.jpg',
+          },
+          {
+            src: 'Media\\firefly_18.jpg',
+          },
+          {
+            src: 'Media\\firefly_19.jpg',
+          },
+          {
+            src: 'Media\\firefly_20.jpg',
+          },
+          {
+            src: 'Media\\firefly_21.jpg',
+          },
+          {
+            src: 'Media\\firefly_22.jpg',
+          },
+          {
+            src: 'Media\\firefly_23.jpg',
+          },
+        ]
       }
     ]
   },
   noaa: {
     title: 'NOAA-satelliittien kuvien vastaanotto',
-    description: 'Sääsatelliittien kuvien vastaanotto ja käsittely radiovastaanottimella',
-    details: 'Projekti mahdollistaa NOAA-satelliittien lähettämien säädatakuvien vastaanoton tavallisella SDR-radiovastaanottimella. Järjestelmä seuraa satelliittien ylilentoja ja prosessoi signaalit visuaalisiksi säätiedoiksi.',
+    description: '',
+    details: '',
     technologies: ['SDR', 'Antennit', 'Kiertoratamekaniikka'],
     year: '2019',
     contentSections: [
       {
         type: 'text',
-        content: 'NOAA-satelliitit lähettävät jatkuvasti säädataa, jota voidaan vastaanottaa tavallisella radiovastaanottimella. Projektissa rakensin SDR-vastaanottimen ja antennin, jotka on viritetty satelliittien taajuuksille.'
+        content: 'NOAA ylläpitää useita polaarikiertoradalla kulkevia sääsatelliitteja, kuten NOAA-15, NOAA-18 ja NOAA-19, jotka lähettävät sääkuvia 137 MHz:n taajuudella. Rakensin kupariputkesta QHA-antennin, jonka viritin tälle taajuudelle. Ohjeet antennin rakentamiseen löysin netistä eräältä radioamatööriltä, joka oli antennin suunnitellut.<br><br>Signaalin vastaanottoon käytin Airspy Mini SDR-vastaanotinta ja sateliittien kiertoradan seurantaan Heavens-Above -sovellusta.'
       },
       {
         type: 'image',
@@ -1008,19 +1179,19 @@ const projectDetails = {
         isPortrait: true
       },
       {
-        type: 'image',
-        content: 'Media\\noaa_1.jpeg',
-        caption: 'Vastaanotettu kuva',
-        isPortrait: false
-      },
-      {
         type: 'text',
-        content: 'Vastaanotettu signaali prosessoidaan Python-ohjelmistolla, joka muuntaa APT-signaalin visuaaliseksi säädataksi. Tämä mahdollistaa reaaliaikaisten säätietojen vastaanoton suoraan satelliiteista.'
+        content: 'Signaali vastaanotetaan SDR#-ohjelmalla ja siirretään tietokoneen sisäisesti äänenä WXtoImg-ohjelmaan, joka muuntaa signaalin kuvaksi ja tekee siihen lisäkäsittelyä, kuten lisää valtioiden rajoja ja kohdistaa kuvan kalibrointimerkkien perusteella. Äänen siirtämiseen käytin VB-Cable-ohjelmaa, joka toimii virtuaalisena audiokaapelina.'
       },
       {
         type: 'image',
         content: 'Media\\noaa_4.jpeg',
-        caption: 'Signaalin vastaanotto ohjelmalla SDR# (oikealla) ja sen muuntaminen kuvaksi ohjelmalla WXtoimg (vasemmalla)'
+        caption: 'Signaalin vastaanotto ohjelmalla SDR# (oikealla) ja sen muuntaminen kuvaksi ohjelmalla WXtoimg (vasemmalla). Kuva piirtyy alhaalta ylös.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\noaa_1.jpeg',
+        caption: 'Vastaanotettu kuva',
+        isPortrait: false
       },
       {
         type: 'text',
@@ -1056,9 +1227,13 @@ const projectDetails = {
         ],
       },
       {
+        type: 'text',
+        content: 'Olen käyttänyt tätä antennia myös muiden sateliittien kuunteluun. Tässä esimerkkinä Aalto 1:'
+      },
+      {
         type: 'video',
         content: 'Media\\aalto1_2.mp4',
-        caption: '18.6.2024 Aalto 1 morsettaa "A-A-L-T-O-1". Reilu kaksi kuukautta ennen kuin se paloi maan ilmakehässä.',
+        caption: '18.6.2024 Aalto 1 morsettaa "A-A-L-T-O-1". Reilu kaksi kuukautta ennen kuin se tippui maan ilmakehään.',
         isPortrait: false
       }
     ]
