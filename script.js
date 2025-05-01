@@ -1019,7 +1019,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Raketin kehityksen taustalla oli todella paljon muutakin kehitystä mitä tällä sivulla esittelin. Projektista on jo aikaa, enkä kuvannut jokaista kehitysaskelta ja melko paljon jäi kertomatta, mutta pääkohdat tuli kuitenkin kerrottua.<br><br>Isoin haaste oli ohjainkortin kehittäminen. En ollut ennen piirtänyt ja tilannut piirilevyä kustomoituna, eikä minulla ollut kovin vahvaa elektroniikka- tai koodausosaamista. Projekti kuitenkin opetti aika paljon elektroniikasta, 3D-tulostuksesta, servo-ohjauksesta sekä piirilevyjen CAD-suunnittelusta.<br><br>Projekti jäi kesken kahdesta syystä, sen takia että aiheet olivat minulle uusia ja sen takia että projekti lähti useassa vaiheessa rönsyilemään päätavoitteen ohi. Lisäilin rakettiin kesken projektin useita toimintoja kuten: etäohjaus radiomoduulilla, akkujen latauspiiri, ”on/off IC” virransyötön hallintaan ja muita vastaavia. Nämä asiat olivat tietenkin erittäin mielenkiintoisia ja opettavaisia, mutta lopulta aika ei vain tahtonut riittää ja nyt projekti odottaa varaston laatikossa sen jatkamista.'
+        content: 'Raketin kehityksen taustalla oli todella paljon muutakin kehitystä mitä tällä sivulla esittelin. Projektista on jo aikaa, enkä kuvannut jokaista kehitysaskelta ja melko paljon jäi kertomatta, mutta pääkohdat tuli kuitenkin kerrottua.<br><br>Isoin haaste oli ohjainkortin kehittäminen. En ollut ennen piirtänyt ja tilannut piirilevyä kustomoituna, eikä minulla ollut kovin vahvaa elektroniikka- tai koodausosaamista. Projekti kuitenkin opetti aika paljon elektroniikasta, 3D-tulostuksesta, servo-ohjauksesta sekä piirilevyjen CAD-suunnittelusta.<br><br>Projekti jäi kesken kahdesta syystä, sen takia että aiheet olivat minulle uusia ja sen takia että projekti lähti useassa vaiheessa rönsyilemään päätavoitteen ohi. Lisäilin rakettiin kesken projektin useita toimintoja kuten: etäohjaus radiomoduulilla, akkujen latauspiiri, "on/off IC" virransyötön hallintaan ja muita vastaavia. Nämä asiat olivat tietenkin erittäin mielenkiintoisia ja opettavaisia, mutta lopulta aika ei vain tahtonut riittää ja nyt projekti odottaa varaston laatikossa sen jatkamista.'
       },
       
     ]
@@ -1046,7 +1046,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Lennonohjain: <br>Asensin lennokkiin lennonohjaimen Speedybee F405 wing, joka on lennokin ”aivot”. Lennonohjain on konfiguroitavissa erilaisille lennokeille ja eri tarpeiden mukaan. Konfiguroin siihen mm. seuraavia toimintoja: <br>- Lennokin vakautus<br>- Telemetriatietojen lähetys lähetinmoduulin kautta FPV-laseihin<br>- Automaattilaukaisutoiminto<br>- Automaattinen kotiinpaluu joko kytkimestä tai ohjaussignaalin katketessa<br>- yms. yms...<br><br>Kytkin lennonohjaimeen myös GPS-moduulin, jonka avulla se tietää sijaintinsa.'
+        content: 'Lennonohjain: <br>Asensin lennokkiin lennonohjaimen Speedybee F405 wing, joka on lennokin "aivot". Lennonohjain on konfiguroitavissa erilaisille lennokeille ja eri tarpeiden mukaan. Konfiguroin siihen mm. seuraavia toimintoja: <br>- Lennokin vakautus<br>- Telemetriatietojen lähetys lähetinmoduulin kautta FPV-laseihin<br>- Automaattilaukaisutoiminto<br>- Automaattinen kotiinpaluu joko kytkimestä tai ohjaussignaalin katketessa<br>- yms. yms...<br><br>Kytkin lennonohjaimeen myös GPS-moduulin, jonka avulla se tietää sijaintinsa.'
       },
       {
         type: 'gallery',
@@ -2142,8 +2142,7 @@ function showProjectDetails(projectId) {
   // Estä sivuston skrollaus kun modaali on auki
   document.body.style.overflow = 'hidden';
   
-  // Varmista että sivu skrollataan ylös ennen modaalin näyttämistä
-  window.scrollTo(0, 0);
+  // Poistettu: window.scrollTo(0, 0); -- Tämä skrollasi koko sivun ylös
   
   modalContent.innerHTML = `
     <span class="close-modal">&times;</span>
