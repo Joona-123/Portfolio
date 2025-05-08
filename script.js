@@ -1240,7 +1240,7 @@ const projectDetails = {
       },
       {
         type: 'video',
-        content: 'Media\\tvc_44.mp4',
+        content: 'Media\\aalto1_2.mp4',
         caption: '18.6.2024 Aalto 1 morsettaa "A-A-L-T-O-1". Reilu kaksi kuukautta ennen kuin se tippui maan ilmakehään.',
         isPortrait: false
       }
