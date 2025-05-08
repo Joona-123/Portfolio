@@ -2473,35 +2473,3 @@ function openYouTubeDirectly(src, caption) {
     document.addEventListener('keydown', escapeHandler);
   }, 0);
 }
-
-// Harrastukset
-const hobbies = [
-  {
-    title: 'Pienoisraketit',
-    description: 'Suunnittelen, rakennan ja lennätän pienoisraketteja. Toteutan myös kokeellisia rakettimoottoreita ja elektroniikkaa.',
-    background: 'raketit'
-  },
-  {
-    title: 'Tähtitiede',
-    description: 'Harrastan tähtien ja planeettojen havainnointia ja valokuvausta erilaisilla kaukoputkilla ja kameroilla.',
-    background: 'tahtitiede'
-  },
-  {
-    title: 'Varjoliito',
-    description: 'Varjoliito on minun keskeisin harrastus. Se on minun kanssa kaksi vuotta, kun käytin aikaa kansainvälisen varjoliiton kanssa.',
-    background: 'varjoliito'
-  },
-  {
-    title: 'Sähköyksipyöräily',
-    description: 'Sähköyksipyöräily on minun keskeisin harrastus. Se on minun kanssa kaksi vuotta, kun käytin aikaa kansainvälisen varjoliiton kanssa.',
-    background: 'euc'
-  },
-  {
-    title: 'Lennokit',
-    description: 'Erilaisten lennokkien rakentaminen ja ohjaaminen',
-    background: 'lennokit'
-  }
-];
-
-// HUOM: Harrastuskortit on nyt määritelty suoraan HTML-tiedostossa,
-// joten emme luo niitä dynaamisesti JavaScriptillä.
