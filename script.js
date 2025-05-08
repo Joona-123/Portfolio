@@ -10,6 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Varmistetaan harrastuskorttien tummennus heti sivun latauduttua
   ensureHobbyCardsDarkening();
+  
+  // Lisätään CSS-tyylit teknologiakuplille
+  const styleElement = document.createElement('style');
+  styleElement.textContent = `
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      margin: 2px;
+      display: inline-block;
+    }
+  `;
+  document.head.appendChild(styleElement);
 });
 
 themeToggle.addEventListener('click', () => {
@@ -86,44 +98,42 @@ function ensureHobbyCardsDarkening() {
 const projectDetails = {
   kuualus: {
     title: 'Kuualuksen jalan simulointi',
-    description: 'FEM-analyysi ja kinematiikkasimulointi kuualuksen laskeutumisjalan rakenteesta',
-    details: 'Tässä projektissa suunnittelin ja analysoin kuualuksen laskeutumisjalan rakennetta käyttäen FEM-analyysiä ja kinematiikkasimulointia.',
+    description: '',
+    details: '',
     technologies: ['FEM-simulointi', 'Kinematiikkasimulointi', 'Solidworks', 'CAD'],
     year: '2024',
     contentSections: [
+      {
+        type: 'text',
+        content: 'Tämä projekti oli koulussa kurssilla "3D-mallintaminen ja CAE" tehtävä harjoitustyö. Tavoitteena oli harjoitella Solidworksin FEM- ja kinematiikkasimulointityökaluja. Mallinsin yksinkertaisen alumiinisen kuualuksen laskeutumisjalan kolmella iskunvaimentimella ja tein siitä kinematiikkasimuloinnin ja FEM-analyysin (Finite Element Method). Näillä menetelmillä voin simuloida mekanismien liikeratoja, mitoittaa osat kestäviksi sekä tutkia niihin kohdistuvia rasituksia ja valitsemaan oikeat materiaalit.'
+      },
       {
         type: 'gallery',
         images: [
           {
             src: 'Media\\fem_2.jpg',
-            caption: 'Kuualuksen jalan simulointi',
+            caption: 'Jalka Solidworksissa',
             isPortrait: false
           },
           {
             src: 'Media\\fem_6.jpg',
-            caption: 'Kuualuksen jalan simulointi',
+            caption: 'Jalan osat',
             isPortrait: false
           }
         ]
       },
-          
-
-
-
-      {
-        type: 'image',
-        content: 'Media\\fem_6.jpg',
-        caption: 'Kuualuksen jalan simulointi',
-        isPortrait: false
-      },
       {
         type: 'video',
         content: 'Media\\fem_4.mp4',
-        caption: 'Jalan kinematiikkasimulaatio',
+        caption: 'Kinematiikkasimulaatio jalan aukeamisesta',
         isPortrait: false,
         autoplay: true,
         loop: true,
         muted: true
+      },
+      {
+        type: 'text',
+        content: 'FEM-analyysin tulokset. Jännitys, venymä ja siirtymä. Jalka on kiinnitetty osien yläpäästä näkymättömään kappaleeseen ja jalan alapintaan kohdistuu 10kN voima ylöspäin:'
       },
       {
         type: 'gallery',
@@ -150,23 +160,19 @@ const projectDetails = {
           },
           
         ]
-      },
-      {
-        type: 'image',
-        content: 'Media\\fem_1.jpg',
-      }   
+      } 
     ]
   },
   saapallo: {
     title: 'Sääpallo',
     description: '',
-    details: 'Tässä projektissa rakensin laitteen, joka nousi heliumilla täytetyllä sääpallolla stratosfääriin 35:n kilometrin korkeuteen. "avaruuden rajalle" Laitteessa oli mukana kaksi kameraa, kolme lämpötilamittaria, kolme gps-paikanninta, APRS-radiolähetin, laskuvarjo sekä laitteen löytämistä helpottavat vilkkuvalot ja piippauskaiuttimet.<br><br>Projekti lähti liikkeelle pitkän harkinnan ja samankaltaisiin projekteihin tutustumisen jälkeen mm. Youtuben ja harrastelijoiden nettisivujen kautta. Päätin viimein aloittaa tällaisen projektin itse. Aloitin projektin kehittelemällä lennonohjainkortin, joka ohjasi kameroita, vilkkuvaloja sekä piippauskaiuttimia. Kortti toimi myös dataloggerina ja tallensi koko lennon ajalta gps-tiedot, lämpötilat, akun jännitteen ja ilmankosteuden microSD-kortille.',
+    details: '',
     technologies: ['Arduino', 'GPS-paikannus', 'barometri', 'Excel', 'elektroniikka', '3D-tulostus', 'radiotekniikka', 'APRS-paikannus', 'Antennitekniikka', 'Ompelu'],
     year: '2020 - 2021',
     contentSections: [
       {
         type: 'text',
-        content: 'Sääpalloprojektin tavoitteena oli kehittää edullinen mittausasema ilmakehän tutkimiseen. Palloon asennettiin useita antureita, jotka mittaavat lämpötilaa, painetta, kosteutta ja muita parametreja.'
+        content: 'Rakensin laitteen, joka nousi heliumilla täytetyllä sääpallolla stratosfääriin 35km korkeuteen "Avaruuden rajalle".  Laitteessa oli mukana kaksi kameraa, kolme lämpötilamittaria, kolme gps-paikanninta, APRS-radiolähetin, laskuvarjo sekä laitteen löytämistä helpottavat vilkkuvalot ja piippauskaiuttimet.<br><br>Projekti lähti liikkeelle pitkän haaveilun ja samankaltaisiin projekteihin tutustumisen jälkeen mm. Youtuben ja harrastelijoiden nettisivujen kautta. Päätin viimein aloittaa tällaisen projektin itse. Aloitin projektin kehittelemällä lennonohjainkortin, joka ohjasi kameroita, vilkkuvaloja sekä piippauskaiuttimia. Kortti toimi myös dataloggerina ja tallensi koko lennon ajalta gps-tiedot, lämpötilat, akun jännitteen ja ilmankosteuden microSD-kortille.'
       },
       {
         type: 'gallery',
@@ -184,7 +190,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Sähkö elektroniikalle tuli paristopaketista, joka oli kasattu 16:sta tavallisesta AA-paristosta. Tarkempi malli on Energizer Ultimate Lithium L91. Paristomalliksi valikoitui litiumparisto sen hyvän suorituskyvyn takia alhaisissa lämpötiloissa. Tein paristopaketteja kaksi, toinen lennolle ja toinen oli testausta varten. Laskin tarvittavan määrän akun kapasiteetille ennen sen valmistusta, mutta testeillä varmistin laskelmat. Paketin kokonaiskapasiteetti oli 84Wh, joka on melko suuri kulutukseen verrattuna. Tämä siksi että jos laite ei olisi löytynyt maastosta heti, olisi radiolähetin, piippauskaiutin ja vilkkuvalot toimineet vielä pitkään.'
+        content: 'Sähkö elektroniikalle tuli paristopaketista, joka oli kasattu 16:sta tavallisesta AA-paristosta. Tarkempi malli on Energizer Ultimate Lithium L91. Paristomalliksi valikoitui litiumparisto sen hyvän suorituskyvyn takia alhaisissa lämpötiloissa. Tein paristopaketteja kaksi, toinen lennolle ja toinen oli testausta varten. Laskin tarvittavan määrän akun kapasiteetille ennen sen valmistusta, mutta testeillä varmistin laskelmat. Paketin kokonaiskapasiteetti oli 84Wh, joka on melko suuri kulutukseen verrattuna. Tämä oli siksi että jos laite ei olisi löytynyt maastosta heti, olisi radiolähetin, piippauskaiutin ja vilkkuvalot toimineet vielä pitkään.'
 
       },
       {
@@ -203,7 +209,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Lennolla mukana oli kolme gps-paikanninta:<br>- Spot Trace satelliittipaikannin, joka välitti sijaintitedot sateliittien kautta maahan. Tämä paikannin on siksi hyvä, että se toimii melkein missä tahansa maapallolla juurikin omien sateliittien takia.<br><br>- APRS-paikannin radiolähettimellä, ainoa paikannin joka välittää sijaintitiedon koko lennon ajalta maahan.<br><br>- GSM-matkapuhelinverkolla sijaintitiedon välittävä paikannin. Tämä paikannin toimii vain, jos se saa yhteyden matkapuhelinverkkoon. Paikantimelle oli oma prepaid-liittymä.<br><br>Tärkeimmälle paikantimelle eli Spot Tracelle rakensin gimbal-mekanismin, joka kääntää paikantimen gps-antennin osoittamaan aina ylöspäin, oli laatikko missä asennossa tahansa. Tämä pienetää riskiä, että laatikko jäisi ylösalaisin laskeutessaan ja tämän takia paikannin ei kuulisi gps-sateliittien signaalia.'
+        content: 'Lennolla mukana oli kolme gps-paikanninta:<br>- Spot Trace satelliittipaikannin, joka välitti sijaintitedot sateliittien kautta maahan. Tämä paikannin on siksi hyvä, että se toimii melkein missä tahansa maapallolla juurikin omien sateliittien takia.<br><br>- APRS-paikannin radiolähettimellä, ainoa paikannin joka välittää sijaintitiedon reaaliajassa koko lennon ajalta maahan.<br><br>- GSM-matkapuhelinverkolla sijaintitiedon välittävä paikannin. Tämä paikannin toimii vain, jos se saa yhteyden matkapuhelinverkkoon. Paikantimelle oli oma prepaid-liittymä.<br><br>Tärkeimmälle paikantimelle eli Spot Tracelle rakensin gimbal-mekanismin, joka kääntää paikantimen gps-antennin osoittamaan aina ylöspäin, oli laatikko missä asennossa tahansa. Tämä pienentää riskiä, että laatikko jäisi laskeutessaan ylösalaisin ja tämän takia paikannin ei kuulisi gps-sateliittien signaalia.'
       },
       {
         type: 'gallery',
@@ -237,7 +243,7 @@ const projectDetails = {
       }, 
       {
         type: 'text',
-        content: 'Kun laite oli noussut stratosfääriin, se pitää saada hallitusti alas. Tähän tarkoitukseen ompelin laskuvarjon nylonkankaasta. Laskuvarjon muoto on kuusikulmio, yksinkertainen ja toimintavarma. Laskuvarjon koon määrittämiseen käytin pienoisrakettiharrastaja Jordan Hillerin kehittämää laskuria, jolla voi laskea putoamisnopeuden kun lähtötietoina on paino ja laskuvarjon koko.<br>Laskuri: descentratecalculator.onlinetesting.net'
+        content: 'Kun laite oli noussut stratosfääriin, se pitää saada hallitusti alas. Tähän tarkoitukseen ompelin nylonkankaasta laskuvarjon. Laskuvarjon muoto on kuusikulmio, yksinkertainen ja toimintavarma. Laskuvarjon koon määrittämiseen käytin pienoisrakettiharrastaja Jordan Hillerin kehittämää laskuria, jolla voi laskea putoamisnopeuden kun lähtötietoina on paino ja laskuvarjon koko.<br>Laskuri: descentratecalculator.onlinetesting.net'
       },
       {
         type: 'gallery',
@@ -332,7 +338,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Laitteen reittiä seurattiin koko lennon ajan, jonka ansiosta laskeutumispaikkaa pystyi arvioimaan tarkemmin kuin ennusteessa. Tämän ansiosta sen laskeutumien puiden taakse metsään nähtiin auton kyydistä. Lennolla oli tuuria mukana, laskeutumispaikka olisi hyvinkin voinut olla esimerkiksi puun latva, lampi tai muu vastaava. Kuitenkin reilun kolmen tunnin kuluttua pallon päästämisestä ilmaan, se laskeutui harvaan metsään jäämättä puuhun jumiin. (lukuunottamatta laskuvarjoa)'
+        content: 'Laitteen reittiä seurattiin koko lennon ajan, jonka ansiosta laskeutumispaikkaa pystyi arvioimaan tarkemmin kuin ennusteessa. Tämän ansiosta näin laitteen laskeutuminen puiden taakse metsään. Lennolla oli tuuria mukana, laskeutumispaikka olisi hyvinkin voinut olla esimerkiksi puun latva, lampi, järvi tai muu vastaava. Kuitenkin reilun kolmen tunnin kuluttua pallon päästämisestä ilmaan, se laskeutui harvaan metsään jäämättä puuhun jumiin. (lukuunottamatta laskuvarjoa)'
       },
       {
         type: 'gallery',
@@ -395,11 +401,11 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tässä en oikeastaan esittele yksittäistä projektia, vaan useampaa sellaista. Oikeastaan koko rakettiharrastustani. Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitekniikka, elektroniikka ja fysiikka. Raketteihin käytän kaupallisia kiinteäpolttoaineisia kertakäyttöisiä rakettimoottoreita. Suunnittelen raketit aina huolellisesti ja simuloin ne käyttämällä mm. OpenRocket-simulaattoria. Siten varmistan että raketti on vakaa ja se voidaan laukaista turvallisesti. Simulaattorin avulla saan laskettua lennosta muitakin tietoja kuten maksimikorkeus, nopeus, kiihtyvyys, lennon kesto, optimaalinen avausaika laskuvarjolle jne jne... Käytän rakettien laukaisuun radio-ohjattavaa etäsytytintä, jotta moottorin voi sytyttää etänä kauempaa.'
+        content: 'Tässä en oikeastaan esittele yksittäistä projektia, vaan useampaa sellaista. Oikeastaan koko rakettiharrastustani. Pienoisrakettien rakentaminen on harrastus, jossa yhdistyy aerodynamiikka, materiaalitekniikka, elektroniikka ja fysiikka. Raketteihin käytän kaupallisia kiinteäpolttoaineisia kertakäyttöisiä rakettimoottoreita. Suunnittelen raketit aina huolellisesti ja simuloin ne käyttämällä mm. OpenRocket-simulaattoria. Siten varmistan että raketti on vakaa ja se voidaan laukaista turvallisesti. Simulaattorin avulla saan laskettua lennosta monenlaisia tietoja kuten maksimikorkeus, nopeus, kiihtyvyys, lennon kesto, optimaalinen avausaika laskuvarjolle jne jne... Käytän rakettien laukaisuun radio-ohjattavaa etäsytytintä, jotta moottorin voi sytyttää etänä.'
       },
       {
         type: 'text',
-        content: 'Tinttiraketti:<br>Tein kopion sajakuvista tutusta Tintin kuuraketista. Piirsin raketin Autodesk Fusion CAD-ohjelmalla käyttäen apuna netistä löytyviä kuvia. Runko valmistettiin 3D-tulostamalla ja siivekkeet hiilikuitulevystä. Alla on kolme videota lennoista. Ensimmäisessä yrityksessä moottorit räjähtivät. Toiseen yritykseen vaihdettiin moottorin valmistajaa ja neljän moottorin tilalle yksi isompi moottori. Kuitenkin tämäkin moottori oli viallinen ja räjähti kesken lennon. Lennon jälkeen maasta löytyi palamattomia polttoaineen palasia. Moottorivalmistajan mukaan tuotantoerässä oli käytetty väärää polttoainetta jolla oli liian suuri palonopeus. Moottorit vaihdettiin toimiviin ja kolmas lento onnistui täydellisesti.'
+        content: 'Tinttiraketti:<br>Tein kopion sajakuvista tutusta Tintin kuuraketista. Piirsin raketin Autodesk Fusion CADillä käyttäen apuna netistä löytyviä kuvia. Runko valmistettiin 3D-tulostamalla ja siivekkeet hiilikuitulevystä. Alla on kolme videota lennoista. Ensimmäisessä yrityksessä moottorit räjähtivät. Toiseen yritykseen vaihdettiin moottorin valmistajaa ja neljän moottorin tilalle yksi isompi moottori. Kuitenkin tämäkin moottori oli viallinen ja räjähti kesken lennon. Lennon jälkeen maasta löytyi palamattomia polttoaineen palasia. Moottorivalmistajan mukaan tuotantoerässä oli käytetty väärää polttoainetta jolla oli liian suuri palonopeus. Moottorit vaihdettiin valmistajan kautta toimiviin ja kolmas lento onnistui täydellisesti.'
       },
       {
         type: 'gallery',
@@ -443,7 +449,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Runko valmistettiin pvc-putkesta, siivekkeet sekä moottoritelineet lasikuidusta ja nokka ja laukaisukiskokiinnikkeet 3D-tulostamalla. Ensilento onnistui täydellisesti mutta toisella lennolla yksi neltästä moottorista räjähti jonka takia lennon korkeus jäi pieneksi ja laskuvarjo ehti juuri ja juuri aukenemaan.'
+        content: 'Tämän raketin runko valmistettiin pvc-putkesta, siivekkeet sekä moottoritelineet lasikuidusta ja nokka ja laukaisukiskokiinnikkeet 3D-tulostamalla. Ensilento onnistui täydellisesti mutta toisella lennolla yksi neljästä moottorista räjähti, jonka takia lennon korkeus jäi matalaksi ja laskuvarjo ehti juuri ja juuri aukenemaan.'
       },
       {
         type: 'gallery',
@@ -461,7 +467,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Harrastan myös lennokkeja joten tietenkin tätäkin piti kokeilla:'
+        content: 'Harrastan myös lennokkeja joten tietenkin tätäkin piti kokeilla. Tein etäsytyttimen jota voi ohjata lennokin ohjaimella ja tulostin rakettimoottorikiinnikkeet lennokkiin:'
       },
       {
         type: 'video',
@@ -471,7 +477,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Sekalaisia kuvia rakettien rakentamisesta:'
+        content: 'Sekalaisia kuvia rakettien rakentelusta:'
       },
       {
         type: 'gallery',
@@ -627,19 +633,21 @@ const projectDetails = {
         ]
       },
 
-
       {
-        type: 'video',
-        content: 'Media\\raketit_7cc2.mp4',
-        caption: 'Viallinen moottori',
-        isPortrait: false
-      },
-      {
-        type: 'image',
-        content: 'Media\\raketit_49.jpg',
-        caption: 'Raketin moottoripäädyn jäännökset',
-        isPortrait: false
-      },
+        type: 'gallery',
+        images: [
+          {
+            src: 'Media\\raketit_7cc2.mp4',
+            caption: 'Viallinen moottori',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\raketit_49.jpg',
+            caption: 'Räjähdyksen jäännökset',
+            isPortrait: false
+          },
+        ]
+      }
       
       
       
@@ -659,7 +667,7 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tämä projekti oli osa ESA:n Fly A Rocket! -kurssia, jonka kävin vuonna 2024. Yksi kurssin tehtävistä oli jatkokehittää kurssilta saatua Python-lentoratasimulaattoria, joka oli aluksi hyvin yksinkertainen ja toimi vain yhdessä ulottuvuudessa. Tehtävänä oli mahdollistaa raketin liike simulaatiossa toisessa ulottuvuudessa, simuloida raketin pystyakselin suuntaisen kiihtyvyysmittarin mittaama kiihtyvyys, sekä muita muutoksia. Simulaattori perustuu pääosin Newtonin lakeihin, ilmanvastuksen laskukaavaan sekä yksinkertaiseen ilmakehän tiheyden mallinnukseen. <br><br>Innostuin kuitenkin jatkamaan simulaattorin kehitystä pidemmälle, lisäsin siihen mahdollisuuden käyttää tekstitiedostossa olevaa moottorin työntövoimadataa. Rakensin työntövoiman mittaamiseen testipenkin, joka mittaa venymäliuska-anturilla 33Hz näytteenottotaajuudella rakettimoottorin työntövoimaa ja tallentaa sen microSD-kortille tekstitiedostoksi. Simulaattori ottaa tämän kyseisen tekstitiedoston sisään ja simuloi raketin lentoradan sen perusteella. Näin saadaan tarkempi ennuste, kuin alkuperäisellä simulaattorilla, jossa työntövoima oli koko paloajan vakio.'
+        content: 'Tämä projekti oli osa ESA:n Fly A Rocket! -kurssia, jonka kävin vuonna 2024. Yksi kurssin tehtävistä oli jatkokehittää kurssilta saatua Python-lentoratasimulaattoria, joka oli aluksi hyvin yksinkertainen ja toimi vain yhdessä ulottuvuudessa. Tehtävänä oli mahdollistaa raketin liike simulaatiossa toisessa ulottuvuudessa, simuloida raketin pystyakselin suuntaisen kiihtyvyysmittarin mittaama kiihtyvyys, sekä muita muutoksia. Simulaattori perustuu pääosin Newtonin lakeihin, ilmanvastuksen laskukaavaan sekä yksinkertaiseen ilmakehän tiheyden mallinnukseen. <br><br>Innostuin kuitenkin jatkamaan simulaattorin kehitystä pidemmälle, lisäsin siihen mahdollisuuden käyttää tekstitiedostossa olevaa moottorin työntövoimadataa. Rakensin työntövoiman mittaamiseen testipenkin, joka mittaa venymäliuska-anturilla 33Hz näytteenottotaajuudella rakettimoottorin työntövoimaa ja tallentaa sen microSD-kortille tekstitiedostoksi. Simulaattori ottaa tämän tekstitiedoston sisään ja simuloi raketin lentoradan sen perusteella. Näin saadaan tarkempi ennuste, kuin alkuperäisellä simulaattorilla, jossa työntövoima oli koko paloajan vakio.'
       },
       {
         type: 'image',
@@ -709,7 +717,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Tein myös Excel-tiedoston, jolla dataa voi tutkia tarkemmin ja piirtää siitä käyrän.'
+        content: 'Tein myös Excel-tiedoston, jolla testipenkin dataa voi tutkia tarkemmin ja piirtää siitä käyrän.'
       },
       {
         type: 'image',
@@ -739,7 +747,7 @@ const projectDetails = {
     description: '',
     details: '',
     technologies: ['Arduino', 'IMU', 'Barometri', 'Servot', '3D-tulostus', 'Komposiitit', 'Radiotekniikka', 'HC-12 Radiokommunikaatio', 'PID-säätö'],
-    year: '2021 - Kehitysvaiheessa',
+    year: '2021 -   ',
     contentSections: [
       {
         type: 'text',
@@ -783,7 +791,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Laskuvarjon avausmekanismi oli kumilenkeillä toimiva servolla vapautettava lautanen, joka työntää raketin nokan sekä laskuvarjon ulos. Raketin rungoksi valitsin pienoisrakettikäyttöön tarkoitetun pahviputken, johon kiinnitin 3D-tulostetut kiinnikkeet moottorin gimbaalille, ohjainkortille, laskuvarjon avausmekanismille sekä servoille. Raketin ohjauskortiksi suunnittelin aluksi käsin tehtyä PCB:tä, mutta vaihdoin sen myöhemmin itse suunniteltuun kustomoituun piirilevyyn, joka tilattiin piirilevyvalmistaja PCBWay:ltä kiinasta.Laskuvarjon avausmekanismi oli kumilenkeillä toimiva servolla vapautettava lautanen, joka työntää raketin nokan sekä laskuvarjon ulos. Raketin rungoksi valitsin pienoisrakettikäyttöön tarkoitetun pahviputken, johon kiinnitin 3D-tulostetut kiinnikkeet moottorin gimbaalille, ohjainkortille, laskuvarjon avausmekanismille sekä servoille. Raketin ohjauskortiksi suunnittelin aluksi käsin tehtyä PCB:tä, mutta vaihdoin sen myöhemmin itse suunniteltuun kustomoituun piirilevyyn, jonka tilasin piirilevyvalmistaja PCBWay:ltä kiinasta.'
+        content: 'Laskuvarjon avausmekanismi oli kumilenkeillä toimiva servolla vapautettava mäntä, joka työntää raketin nokan sekä laskuvarjon ulos. Raketin rungoksi valitsin pienoisrakettikäyttöön tarkoitetun pahviputken, johon kiinnitin 3D-tulostetut kiinnikkeet moottorin gimbaalille, ohjainkortille, laskuvarjon avausmekanismille sekä servoille. Raketin ohjauskortiksi suunnittelin aluksi käsin tehtyä PCB:tä, mutta vaihdoin sen myöhemmin itse suunniteltuun kustomoituun piirilevyyn, joka tilattiin piirilevyvalmistaja PCBWay:ltä kiinasta.'
       },
       {
         type: 'gallery',
@@ -842,7 +850,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Valmistin raketin nokan hiilikuidusta. Tein nokan kolmesta osasta joille jokaiselle 3D-tulostin muotit. Lopuksi liimasin osat epoksilla yhteen, kittasin ja maalasin nokan.'
+        content: 'Valmistin raketin nokan hiilikuidusta. Tein nokan kolmesta osasta, joille jokaiselle 3D-tulostin muotit. Lopuksi liimasin osat epoksilla yhteen, kittasin ja maalasin nokan.'
       },
       {
         type: 'gallery',
@@ -889,7 +897,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Tärkein työkalu projektissa oli Anycubic Photon SLA-3D-tulostin. Tulostusmateriaalina käytin funktionaalisten osien tulostukseen tarkoitettuaSiraya Tech Blu -hartsia. '
+        content: 'Tärkein työkalu projektissa oli Anycubic Photon SLA-3D-tulostin. Tulostusmateriaalina käytin funktionaalisten osien tulostukseen tarkoitettua Siraya Tech Blu -hartsia. '
       },
       {
         type: 'gallery',
@@ -974,7 +982,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Raketin elektroniikan ja muiden osien kehittyessä ja ohjainkortin vaatiman tilan vähetessä suunnittelin ohjainkortista toisen version, joka vaatisi huomattavasti vähemmän tilaa ohjainkortin asento muuttui vaakatasoon ja sijainti ylemmäs rakettia. Näin sain yksinkertaistettua myös laskuvarjon avausmekanismia, joten koko rakenteesta tuli kevyempi.'
+        content: 'Raketin elektroniikan ja muiden osien kehittyessä ja ohjainkortin vaatiman tilan vähetessä suunnittelin ohjainkortista toisen version, joka vaatisi huomattavasti vähemmän tilaa. Ohjainkortin asento muuttui vaakatasoon ja sijainti ylemmäs rakettia. Näin sain yksinkertaistettua myös laskuvarjon avausmekanismia, joten koko rakenteesta tuli kevyempi.'
       },
       {
         type: 'gallery',
@@ -1019,7 +1027,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Raketin kehityksen taustalla oli todella paljon muutakin kehitystä mitä tällä sivulla esittelin. Projektista on jo aikaa, enkä kuvannut jokaista kehitysaskelta ja melko paljon jäi kertomatta, mutta pääkohdat tuli kuitenkin kerrottua.<br><br>Isoin haaste oli ohjainkortin kehittäminen. En ollut ennen piirtänyt ja tilannut piirilevyä kustomoituna, eikä minulla ollut kovin vahvaa elektroniikka- tai koodausosaamista. Projekti kuitenkin opetti aika paljon elektroniikasta, 3D-tulostuksesta, servo-ohjauksesta sekä piirilevyjen CAD-suunnittelusta.<br><br>Projekti jäi kesken kahdesta syystä, sen takia että aiheet olivat minulle uusia ja sen takia että projekti lähti useassa vaiheessa rönsyilemään päätavoitteen ohi. Lisäilin rakettiin kesken projektin useita toimintoja kuten: etäohjaus radiomoduulilla, akkujen latauspiiri, "on/off IC" virransyötön hallintaan ja muita vastaavia. Nämä asiat olivat tietenkin erittäin mielenkiintoisia ja opettavaisia, mutta lopulta aika ei vain tahtonut riittää ja nyt projekti odottaa varaston laatikossa sen jatkamista.'
+        content: 'Raketin kehityksen taustalla oli todella paljon muutakin kehitystä mitä tällä sivulla esittelin. En ole kuvannut jokaista kehitysaskelta ja melko paljon jäi kertomatta, mutta pääkohdat tuli kuitenkin kerrottua.<br><br>Isoin haaste oli ohjainkortin kehittäminen. En ollut ennen piirtänyt ja tilannut piirilevyä kustomoituna, eikä minulla ollut kovin vahvaa elektroniikka- tai koodausosaamista. Projekti kuitenkin opetti paljon elektroniikasta, 3D-tulostuksesta, servo-ohjauksesta, PID-säädöstä sekä piirilevyjen CAD-suunnittelusta.<br><br>Aikataulusyistä projekti on toistaiseksi tauolla, mutta suunnitelmissa on jatkaa sitä myöhemmin.'
       },
       
     ]
@@ -1082,7 +1090,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Akkupaketti:<br><br>Tein aluksi akkupaketin kahdeksasta samsungin 21700-kennosta, jotka juotin 4S2P kokoonpanoon. Lentoaikaa tällä paketilla sain noin 1–1,5 tuntia riippuen lennätystavasta. Lennokki lensi tällä paketilla vakaasti ja muutenkin hyvin, mutta lentoonlähdöt sekä -nousut olivat melko epävarmoja ja lennokki saattoi sakata heittäessä sitä ilmaan. Ja vastaavasti laskeutumiset olivat aika kovia. Päätin pudottaa akun koon puoleen. Tein akuista 4S1P kokoonpanon, jonka jälkeen lentoonlähdöt ja -nousut sujuivat huomattavasti paremmin. Lentoaika tippui 30-45 minuuttiin.'
+        content: '<br>Akkupaketti:<br><br>Tein aluksi akkupaketin kahdeksasta samsungin 21700-kennosta, jotka juotin 4S2P kokoonpanoon. Lentoaikaa tällä paketilla sain noin 1–1,5 tuntia riippuen lennätystavasta. Lennokki lensi tällä paketilla vakaasti ja muutenkin hyvin, mutta lentoonlähdöt sekä -nousut olivat melko epävarmoja ja lennokki saattoi sakata heittäessä sitä ilmaan. Ja vastaavasti laskeutumiset olivat aika kovia. Päätin pudottaa akun koon puoleen. Tein akuista 4S1P kokoonpanon, jonka jälkeen lentoonlähdöt ja -nousut sujuivat huomattavasti paremmin. Lentoaika tippui 30-45 minuuttiin.'
       },
       {
         type: 'gallery',
@@ -1180,7 +1188,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Signaali vastaanotetaan SDR#-ohjelmalla ja siirretään tietokoneen sisäisesti äänenä WXtoImg-ohjelmaan, joka muuntaa signaalin kuvaksi ja tekee siihen lisäkäsittelyä, kuten lisää valtioiden rajoja ja kohdistaa kuvan kalibrointimerkkien perusteella. Äänen siirtämiseen käytin VB-Cable-ohjelmaa, joka toimii virtuaalisena audiokaapelina.'
+        content: 'Signaali vastaanotetaan SDR#-ohjelmalla ja siirretään tietokoneen sisäisesti audiona WXtoImg-ohjelmaan, joka muuntaa signaalin kuvaksi ja tekee siihen lisäkäsittelyä, kuten lisää valtioiden rajoja ja kohdistaa kuvan kalibrointimerkkien perusteella. Äänen siirtämiseen käytin VB-Cable-ohjelmaa, joka toimii virtuaalisena audiokaapelina.'
       },
       {
         type: 'image',
@@ -1240,20 +1248,24 @@ const projectDetails = {
   },
   jalkatasoEUC: {
     title: 'Sähköyksipyöräisen jalkataso',
-    description: 'CNC-koneistettu jalkataso sähköyksipyöräiseen',
-    details: 'Suunnittelin ja valmistin CNC-koneistuksella alumiinisen jalkatasorakenteen sähköyksipyöräiseen. Projekti sisälsi CAD-suunnittelun, CNC-ohjelmoinnin ja alumiinin työstämisen.',
-    technologies: ['CAD', 'CNC', 'Mekaniikkasuunnittelu', '3D-tulostus', 'Alumiinin työstäminen'],
+    description: '',
+    details: '',
+    technologies: ['CAD', 'CNC', 'Mekaniikkasuunnittelu', '3D-tulostus'],
     year: '2024',
     contentSections: [
       {
         type: 'text',
-        content: 'Sähköyksipyöräinen (EUC) tarvitsee käyttömukavuuden parantamiseksi hyvät jalkatasot. Tässä projektissa suunnittelin ja valmistin alumiiniset jalkatasot, jotka parantavat ajomukavuutta ja hallittavuutta.'
+        content: 'Tein uudet jalkatasot sähköyksipyöräiseen paremmilla ominaisuuksilla. Tavoitteena oli saada parantaa ajomukavuutta lisäämällä jalkatason kokoa ja kitkaa tason ja kengän välillä. Kasvatin myös jalkatason kulmaa 5.5 asteesta 7 asteen kulmaan, jonka avulla jalat pysyvät niiden päällä paremmin. Suunnittelin pedaalin CADillä ja tein kaksi muovista prototyyppiä. Tilasin jalkatasot konepajalta CNC-koneistettuna.<br><br>Suunnittelu alkoi 3D-mallintamalla pyörän kiinnitysosat joihin jalkatasot kiinnittyvät:'
       },
       {
         type: 'image',
         content: 'Media\\pedaali_2.jpeg',
         caption: 'Jalkatason kiinnityspiste.',
         isPortrait: true
+      },
+      {
+        type: 'text',
+        content: 'Seuraavaksi suunnittelin itse jalkatason 3D-mallin, johon tein pieniä muutoksia prototyyppien valmistuksen välissä. Tässä on kuitenkin vain lopullisen version kuvat. Jalkatason rakenteeksi suunnittelin tuollaisen hunajakennoa muistuttavan rakenteen että lika ei kertyisi sen päälle ja taso olisi kevyt.'
       },
       {
         type: 'gallery',
@@ -1268,6 +1280,10 @@ const projectDetails = {
             isPortrait: false
           }
         ]
+      },
+      {
+        type: 'text',
+        content: 'Tulostin jalkatasosta kaksi prototyyppiä joita pystyin testaamaan pyörässä. Varmistin että mitat on oikein ja taso tuntuu hyvältä jalan alla.'
       },
       {
         type: 'gallery',
@@ -1291,6 +1307,10 @@ const projectDetails = {
         ]
       },
       {
+        type: 'text',
+        content: 'Kun totesin prototyypin toimivaksi, lähetin konepajalle 3D-tiedoston lisäksi myös toleroinnit PDF-tiedostossa. Toleroinnit ovat erityisen tärkeitä jalkatason ja pyörän välisen kiinnitysreiän mitoitukseen, jotta sen akseli sopii reikään ilman liian suurta välystä.'
+      },
+      {
         type: 'gallery',
         images: [
           {
@@ -1305,6 +1325,10 @@ const projectDetails = {
           }
         ]
       }, 
+      {
+        type: 'text',
+        content: 'Koneistetut osat saapui postissa! Ruuvasin yläpintaan pitoa lisäävät nastat ja asensin jalkatasot kiinni pyörään.  '
+      },
       {
         type: 'gallery',
         images: [
@@ -1325,6 +1349,10 @@ const projectDetails = {
           }
         ]
       },
+      {
+        type: 'text',
+        content: 'Jalkataso sopii pyörään täydellisesti ja toimii edelleen loistavasti yli vuoden ajelujen jälkeen.'
+      },
 
 
 
@@ -1342,13 +1370,13 @@ const projectDetails = {
   planeettakamera: {
     title: 'Älypuhelimesta planeettakamera',
     description: '',
-    details: 'Projekti muuntaa älypuhelimen tehokkaaksi planeettakameraksi kaukoputkeen. Kehitin sovittimen ja ohjelmiston, jotka mahdollistavat planeettojen ja muiden taivaankappaleiden yksityiskohtaisen kuvaamisen ja prosessoinnin.',
+    details: '',
     technologies: ['3D-tulostus', 'Optiikka', 'Tähtitiede', 'Kuvankäsittely'],
     year: '2021',
     contentSections: [
       {
         type: 'text',
-        content: 'Planeettakuvaus on tähtiharrastuksen haastava osa-alue, joka vaatii yleensä kalliita erikoiskameroita. Tässä projektissa kehitin ratkaisun, joka hyödyntää tavallista älypuhelinta planeettojen kuvaamiseen.'
+        content: 'Planeettakuvaus on tähtiharrastuksen osa-alue, joka vaatii siihen tarkoitettuja kameroita. Tässä projektissa kehitin ratkaisun, jossa hyödynnän tavallista älypuhelinta planeettojen kuvaamiseen. Muutin Oneplus 5T:n planeettakuvaukseen sopivaksi. Poistin puhelimen kameramoduulin optiikan ja laitoin sen tilalle kaukoputken.'
       }, 
       {
         type: 'gallery',
@@ -1398,9 +1426,12 @@ const projectDetails = {
           }
         ]
       },
-      
-      
-
+      {
+        type: 'image',
+        content: 'Media\\op5t_16.jpeg',
+        caption: 'Kuvaussessio meneillään',
+        isPortrait: false
+      },
       {
         type: 'gallery',
         caption: 'Kansainvälinen avaruusasema ISS kulkee auringon edestä. Videot reaaliajassa.',
@@ -1450,110 +1481,89 @@ const projectDetails = {
           }
         ]
       }
-
-
-
-
-    ]
-  },
-  saa: {
-    title: 'Sääpallosimulaattori',
-    description: 'Python-pohjainen lentoradan ennustaja GFS-datalla',
-    details: 'Simulaattori ennustaa sääpallon lentorataa käyttäen GFS-säädataa. Projektissa hyödynnetään numeerista mallinnusta ja data-analyysiä.',
-    technologies: ['Python', 'Cursor-editori', 'GFS-säädata'],
-    year: '2025',
-    contentSections: [
-      {
-        type: 'text',
-        content: 'Sääpallosimulaattori on työkalu, joka auttaa ennustamaan sääpallon lentoradan ennen laukaisua. Simulaattori käyttää kansainvälistä GFS-säädataa tuulen nopeuden ja suunnan määrittämiseen eri korkeuksissa.'
-      },
-      {
-        type: 'gallery',
-        images: [
-          {
-            src: 'Media\\gfs2_3.jpg',
-            caption: 'Lentoreitti',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\gfs2_2.jpg',
-            caption: 'Sondehubin ennustajalla laskettu lentoreitti',
-            isPortrait: false
-          },
-          
-        ]
-      },
-
-
-
-
-
-
-
     ]
   },
   metrover: {
-    title: 'Metrover V2',
-    description: 'Robottialustan ohjausjärjestelmän uudelleensuunnittelu',
-    details: 'Tämä projekti keskittyy robottialustan ohjausjärjestelmän modernisointiin ja tehostamiseen.',
+    title: 'Metrover robottimönkijän renkaan ohjausmekanismi',
+    description: '',
+    details: '',
     technologies: ['Autodesk Fusion', 'Solidworks', 'Dassault Systèmes 3Dexperience', 'CAD', '3D-tulostus', 'Laserleikkaus', 'Ohutlevytyöt'],
     year: '2025',
     contentSections: [
       {
-        type: 'gallery',
-        images: [
-          {
-            src: 'Media\\metrover_18.jpg',
-            caption: 'Metrover V2 mobiilirobotti',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\metrover_4.jpeg',
-            caption: 'Takapyörän ripustus ja kääntöakseli',
-            isPortrait: false
-          },
-          
-        ]
+        type: 'text',
+        content: 'Metrover on Metropolian kehittämä kuusirenkainen robottimönkijä, joka kulkee vaativissa olosuhteissa kuten kaivoksissa. Tämä projekti oli keväällä 2025 toteutettu harjoitustyö, jonka tavoitteena oli suunnitella mönkijään renkaiden kääntömekanismi. Mönkijän edellisessä versiossa kääntyminen oli toteutettu kaivinkoneen tapaan differentiaaliohjauksella. Eli siten että renkaat pyörivät eri nopeudella eri puolilla mönkijää. Tämä tekniikka kuitenkin toimi huonosti ja todettiin että renkaalle tarvitaan kääntömekanismi.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\metrover_18.jpg',
+        caption: 'Metrover robottimönkijä',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Kääntömekanismin suunnittelun alkupuolella esiin nousi seuraavia huomioita järjestelmän ominaisuuksista, joita tulisi ottaa huomioon sitä suunnitellessa:<br>•	Pyörän kääntökulma<br>•	Kääntövoima<br>•	Kääntönopeus<br>•	Välys<br>•	Vesi- ja pölytiiveys<br>•	Järjestelmän paino'
+      },
+      {
+        type: 'text',
+        content: 'Suunnittelun alussa kääntämisen aktuaattoriksi valittiin Oriental Motor PKP246D15A2 -mallinen askelmoottori (Kuva 2.), johon kiinnitettiin Neugart PLFE64-040 -mallinen alennusvaihe 1:40 alennussuhteella. Askelmoottorin valintaan päädyttiin sen tarkan ja helpon ohjattavuuden takia. Askelmoottorista saatu vääntömomentti ei kuitenkaan ole tarpeeksi suuri, jonka takia päädyttiin alennusvaihteen valintaan.'
       },
       {
         type: 'gallery',
         images: [
           {
             src: 'Media\\metrover_2.png',
-            caption: 'Askelmoottori',
+            caption: 'Askelmoottori Oriental Motor PKP246D15A2',
             isPortrait: false
           },
           {
             src: 'Media\\metrover_3.png',
-            caption: '1:40 alennusvaihde',
+            caption: '1:40 Alennusvaihe Neugart PLFE64-040',
             isPortrait: false
           },
           
         ]
       },
       {
-        type: 'gallery',
-        images: [
-          {
-            src: 'Media\\metrover_5.png',
+        type: 'text',
+        content: 'Näiden komponenttien valinnan jälkeen jäljellä oli voiman välityksen suunnittelu. Askelmoottorin vääntömomentti piti siirtää mönkijän pyörän haarukan akselille.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\metrover_26.jpg',
+        caption: 'Takapyörän ripustus ja kääntöakseli',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Suunnittelun alussa ideoitiin erilaisia vaihtoehtoja vääntömomentin välittämiseksi akselille. Näistä merkittävimpiä olivat:<br><br> Askelmoottori ja alennusvaihe suoraan akseliin kiinni:<br>o	Hyvät puolet:<br>- Yksinkertainen<br>- Voima siirtyy lyhyen matkan<br>- Rengasta voi kääntää 360 astetta ympäri.<br>o	Huonot puolet:<br>- Kaikki paino tulee renkaan päälle, josta seuraa huonommat jousitukselliset ominaisuudet.<br>- Mekanismi altistuu ulko-olosuhteille<br><br>Voiman välitys akselille vaijeria pitkin:<br>o	Hyvät puolet:<br>- Askelmoottorin ja alennusvaihteen voi viedä mönkijän sisälle suojaan.<br>- Renkaan päällä vähemmän painoa<br>- säädettävä mekaaninen hyötysuhde<br>- Vaijeri voidaan kuoren sisällä viedä ahtaista paikoista<br>- Vaijeri voidaan viedä myös epäsuorasti<br>o	Huonot puolet:<br>- Monimutkaisempi<br>- Kääntökulma rajoittuu noin +-135:n asteeseen.<br>- Vaijerin kuori kuluu ja tarvitsee vaihtaa ajoittain<br><br>Moniurahihna:<br>o	Hyvät puolet<br>- mahdollisesti kestävämpi kuin vaijeri<br>- huoltovapaampi kuin ketju<br>- rajaton kääntyvyys<br>- säädettävä mekaaninen hyötysuhde<br>o	Huonot puolet:<br>- Rakenne on tilaa vievä<br>- Vaatii tarkan linjauksen ja kiristyksen<br>- rajallinen määrä nauhan pituuksia ja nauhapyöriä<br><br>Ketju:<br>o	Hyvät puolet:<br>- Halpoja osia on helposti saatavilla<br>- säädettävä mekaaninen hyötysuhde<br>- rajaton kääntyvyys<br>o	Huonot puolet:<br>- Vaatii huoltoa<br>- voidaan käytännössä vetää vain suorassa linjassa<br>- raskas<br><br>Vipumainen kääntäminen lineaariaktuaattorilla:<br>o	Hyvät puolet:<br>- Hyvä tarkkuus ja hallittavuus<br>- voimakas<br>o	Huonot puolet:<br>- Raskas<br>- suuresti rajoitettu liikerata'
+      },
+      {
+        type: 'text',
+        content: 'Suunnittelussa päädyttiin jatkamaan vaijerivälityksen suunnittelua, koska se todettiin kokonaisuudessaan parhaaksi vaihtoehdoksi, sillä kääntökulmaksi riittää noin 90 astetta, se on mahdollista suunnitella ja toteuttaa ja hyödyt olivat suuremmat. Suurimmaksi hyödyksi tässä nähtiin moottoreiden ja alennusvaihteiden saaminen suojaan mönkijän sisälle.<br><br>Ensimmäinen suunnitteluversio järjestelmästä koostui kahdesta osasta: alennusvaihteeseen kiinnittyvästä ”vaijerirummusta” sekä kaapelipäätyjen kiinnikkeestä. Alla olevassa  kuvassa näkyy CNC-koneistetuksi suunniteltu vaijerirumpu, joka on kiinnitetty kahdeksalla pultilla alennusvaihteeseen. Alennusvaihteessa on kiinni ohutlevytyönä valmistettava osa, johon kiinnitetään vaijerin ulkokuoren päädyt erillisillä siihen tarkoitetuilla kiinnikkeillä.'
+      },
+      {
+        type: 'image',
+        content: 'Media\\metrover_5.png',
             caption: 'CNC-koneistettava vaijerirumpu',
-            isPortrait: false
-          },
-          {
-            src: 'Media\\metrover_6.png',
-            caption: 'Alumiinilevyistä kasattava vaijerirumpu',
-            isPortrait: false
-          },
-          
-          
-        ]
+        isPortrait: false
+      },      
+      {
+        type: 'text',
+        content: 'Ideaa jatkokehitellessä todettiin kuitenkin, että vaijerirummun voi valmistaa ohutlevytyönä merkittävästi yksinkertaisempana ja halvemmalla.<br><br>Toinen suunnitteluversio koostui viidestä laserleikattavasta alumiinilevystä, jotka kiinnitetään päällekkäin pulttien avulla. Rummun toimintaperiaate on suhteellisen yksinkertainen, rummussa on viisi levyä päällekkäin, joista kaksi ulommaista sekä keskimmäinen ovat halkaisijaltaan hieman suurempia. Näin levyjen väliin muodostuu ura, jossa vaijeri pääsee kulkemaan. Koko rumpu on esitettynä alla olevassa kuvassa. Vaijerit ovat esitettynä kuvissa punaisella. Levyihin suunniteltiin kaksi reikää, joihin laitetaan ruuvilla kiristettävä vaijerinippa, jolla vaijerin pääty pysyy kiinni'
+      },
+      {
+        type: 'image',
+        content: 'Media\\metrover_6.png',
+        caption: 'Toinen suunnitteluversio',
+        isPortrait: false
       },
       {
         type: 'gallery',
         images: [
           {
             src: 'Media\\metrover_7.png',
-            caption: 'Poikkileikkausvaijerikiinnikkeiden kohdalta',
+            caption: 'Poikkileikkaus vaijerikiinnikkeiden kohdalta',
             isPortrait: false
           },
           {
@@ -1570,6 +1580,10 @@ const projectDetails = {
         ]
        },
        {
+        type: 'text',
+        content: 'Kun moottoriin kiinnitettävä rumpu oli tarpeeksi lopullisessa suunnitteluvaiheessa, muokattiin siitä versio, joka mahdollistaa kiinnityksen pyörän kääntöakselille. Vaijerirummun ja pyörän kääntöakselin välisestä kiinnityksestä tehtiin samankaltainen mekanismi, jota käytetään polkupyörän satulaputken kiinnitykseen: Suurempi putki, joka tässä tapauksessa on vaijerirumpuun kiinnittyvä putki, liu’utetaan kapeamman putken päälle ja kiinnitetään puristamalla se satulaputken kiinnittämiseen tarkoitetulla puristimella. Alla olevissa kuvissa on kyseinen kokonaisuus ilman puristinta. Vaijerirumpuun kiinnittyvä putki kiristetään rummun päältä yhdellä pultilla. Pultti kiinnittyy renkaan kääntöakseliputken sisälle asennettavaan starnut -tyyppiseen mutteriin, jonka toiminta perustuu kynsiin, jotka kiilautuvat putken sisäseiniin, kun sitä yrittää vetää ulos. Näihin ratkaisuihin päädyttiin niiden yksinkertaisuuden ja valmiiksi saatavien osien vuoksi.'
+       },
+       {
         type: 'gallery',
         caption: 'Renkaan akseliin kiinnittyvä versio',
         images: [
@@ -1583,6 +1597,10 @@ const projectDetails = {
           },
           
         ]
+      },
+      {
+        type: 'text',
+        content: 'Suunnitteluvaiheessa otettiin huomioon osien valmistettavuus ja pyrittiin mahdollisimman halpaan ja yksinkertaiseen valmistettavuuteen. Kääntömekanismin osat suunniteltiin valmistettavaksi 2 mm ja 3 mm alumiinilevystä. Laserleikattavia ohutlevyosia tulisi yhteensä 48kpl sekä 4kpl putkilaserilla leikattavia putkia. Kun kääntömekanismin suunnittelu oli jo loppuvaiheessa ja projektin edistämiseen oli aikaa jäljellä, tehtiin yhden renkaan kääntömekanismista 3D-tulostettu versio, jonka avulla varmistettiin järjestelmän toimivuus.'
       },
       {
         type: 'gallery',
@@ -1608,6 +1626,10 @@ const projectDetails = {
         caption: 'Vaijerirummun 3D-tulostettu prototyyppi asennettuna alennusvaihteeseen ja askelmoottoriin',
         content: 'Media\\metrover_1.jpeg',
         isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Vaijerirummusta tehtiin vielä 1. alumiinistä laserleikattu versio, joka asennettiin väliaikaiseen testipenkkiin, jolla testattiin kääntömekanismin toimivuutta.'
       },
       {
         type: 'gallery',
@@ -1636,7 +1658,7 @@ const projectDetails = {
       },
       {
         type: 'gallery',
-        caption: '',
+        caption: 'Kääntömekanismin testausta',
         images: [
           {
             src: 'Media\\metrover_20cc.mp4',
@@ -1649,21 +1671,6 @@ const projectDetails = {
           
         ]
       },
-
-
-      
-
-      
-      
-      
-      
-
-
-
-
-
-
-
     ]
   }
 };

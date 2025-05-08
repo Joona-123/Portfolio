@@ -943,24 +943,26 @@ footer {
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin: 30px 0;
+  gap: 3px;
+  margin: 5px 0;
 }
 
 .tech-tag {
   background-color: var(--secondary-color);
   color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 500;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 2px;
+  display: inline-block;
 }
 
 .tech-tag:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   background-color: #1565C0;
 }
 
@@ -2115,7 +2117,7 @@ html[data-theme="dark"] .forced-darkening {
   }
 }
 
-/* Tervehdysotsikko. */
+/* Tervehdysotsikko */
 .greeting-header {
   text-align: left;
   margin-left: 0;
