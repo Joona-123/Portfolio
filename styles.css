@@ -1820,6 +1820,30 @@ html[data-theme="dark"] .hobby-card::before {
     margin: 10% auto;
     padding: 15px;
   }
+  
+  /* Projektikorttien tekstit pienemmäksi mobiiliversiossa */
+  .project-details p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+  
+  .project-detailed-info {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+  
+  .project-text-section {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 1.2rem 0;
+  }
+  
+  .image-caption, .video-caption, .gallery-caption {
+    font-size: 0.85rem;
+    margin-top: 0.7rem;
+  }
 } 
 
 .section-anchor {
