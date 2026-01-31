@@ -96,6 +96,96 @@ function ensureHobbyCardsDarkening() {
 
 // Projektin tiedot
 const projectDetails = {
+  dronehackathon: {
+    title: 'Drone innovation hackathon',
+    description: '',
+    details: '',
+    technologies: ['Dronet', '4G/5G', 'IR-kamera', '3D-tulostus'],
+    year: '2026',
+    contentSections: [
+      {
+        type: 'text',
+        content: 'Osallistuin tiimini kanssa Drone Innovation Hackathon -tapahtumaan 21-23.1.2026 Tampereella. Tapahtumassa oli neljä haastetta. Osallistuimme tiimini kanssa haasteeseen numero 3: "4G/5G-Driven Drone Innovation." Haasteen tavoitteena oli rakentaa drone ja lennättää se esteradan läpi siten että ohjaus sekä video kulkivat ainoastaan 5G:n kautta. Pääsimme haasteessa voittajiksi ensimmäiselle sijalle.'
+      },
+      {
+        type: 'text',
+        content: 'Projektissa vastuullani oli pääasiassa dronen peruskomponenttien suunnitelu/valinta ja rakentaminen: runko, moottorit, moottorinohjaimet, FC, potkurit sekä mekaniikan suunnittelu.'
+      },
+      {
+        type: 'text',
+        content: 'Projektin suurin haaste oli aikataulu. Saimme projektiin rahoitusta Metropolia-säätiöltä, mutta rahoitus saatiin niin myöhään että dronen komponenttitilaukset ehtivät saapua noin 3-6 päivää ennen tapahtumaa. Aikaa dronen rakentamiseen jäi siis käytännössä vain kolme päivää. Dronen mekaniikka ja kaikki komponentit saatiin kuitenkin kasattua ennen tapahtuman lennätysvaihetta. Tilanne näytti vielä tässä vaiheessa melko toivottomalta sillä dronessa oli vielä paljon tekemistä, mutta otimme haasteen oppimiskokemuksena ja teimme töitä täysillä dronen kanssa, vaikka onnistuminen näytti vähintäänkin hyvin epätodennäköiseltä '
+      },
+      {
+        type: 'image',
+        content: 'Media\\hack_3.jpeg',
+        caption: 'Dronen mekaniikka valmiina',
+        isPortrait: false
+      },
+      {
+        type: 'gallery',
+        caption: 'Kuvia dronen rakentamisesta',
+        images: [
+          {
+            src: 'Media\\hack_5.jpeg',
+            caption: '',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\hack_7.jpeg',
+            caption: '',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\hack_8.jpeg',
+            caption: '',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\hack_9.jpeg',
+            caption: '',
+            isPortrait: false
+          },
+          {
+            src: 'Media\\hack_10.jpeg',
+            caption: '',
+            isPortrait: false
+          }, 
+          {
+            src: 'Media\\hack_14.jpeg',
+            caption: '',
+            isPortrait: false
+          }, 
+        ]
+      },
+      {
+        type: 'image',
+        content: 'Media\\hack_12.jpeg',
+        caption: '',
+        isPortrait: false
+      },
+      {
+        type: 'text',
+        content: 'Dronen runko on tavallinen 7 tuumainen FPV-dronen runko johon on asennettu Matek H743 flight controller ja 4 in 1 moottorinohjainkortti. 5G-yhteyteen käytettiin Raspberry Pi 4:ää ja sen päälle asennettavaa 5G-modeemia. <br><br> Saimme ohjauksen sekä videostreamauksen toimimaan, mutta video pätki. Kohtasimme muitakin teknisiä haasteita, joten emme ehtineet saada dronea lentokuntoon lennätysvuoroomme mennessä. Todistimme kuitenkin että kaikki käyttämämme teknologiat toimivat ja ovat mahdollista käyttää 5G-dronessa. Ajan puutten vuoksi emme ehtineet testata ja hienosäätää kaikkia ominaisuuksia valmiiksi. '
+      },
+      {
+        type: 'text',
+        content: 'Saimme kuitenkin lentää radan läpi tapahtuman järjestäjän 5G-dronella, jonka tekniset ratkaisut olivat hyvin samankaltaisia joita myös tiimini kanssa teimme omaan droneemme. Video lennosta alla.'
+      },
+      {
+        type: 'video',
+        content: 'Media\\hack_15.mp4',
+        caption: '5G-dronen lennätys, Videon nopeus on nelinkertainen',
+        isPortrait: false,
+        autoplay: false,
+        loop: false,
+        muted: false
+      },
+      {
+        type: 'text',
+        content: 'Dronen lennättäminen oli yllättävän vaikeaa 5G:n viiveen yli vaikka otinkin ennen virallista lentoa muutaman harjoituskierroksen. Koko kisassa vain kaksi tiimiä onnistui lentämään koko radan loppuun asti, joista me olimme toinen tiimi.'
+      },
+    ]
+  },
   kuualus: {
     title: 'Kuualuksen jalan simulointi',
     description: '',
@@ -105,7 +195,7 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tämä projekti oli koulussa kurssilla "3D-mallintaminen ja CAE" tehtävä harjoitustyö. Tavoitteena oli harjoitella Solidworksin FEM- ja kinematiikkasimulointityökaluja. Mallinsin yksinkertaisen alumiinisen kuualuksen laskeutumisjalan kolmella iskunvaimentimella ja tein siitä kinematiikkasimuloinnin ja FEM-analyysin (Finite Element Method). Näillä menetelmillä voin simuloida mekanismien liikeratoja, mitoittaa osat kestäviksi sekä tutkia niihin kohdistuvia rasituksia ja valitsemaan oikeat materiaalit.'
+        content: 'Tämä projekti oli kurssin "3D-mallintaminen ja CAE" harjoitustyö. Tavoitteena oli harjoitella Solidworksin FEM- ja kinematiikkasimulointityökaluja. Mallinsin yksinkertaisen alumiinisen kuualuksen laskeutumisjalan kolmella iskunvaimentimella ja tein siitä kinematiikkasimuloinnin ja FEM-analyysin (Finite Element Method). Näillä menetelmillä voin simuloida mekanismien liikeratoja, mitoittaa osat kestäviksi sekä tutkia niihin kohdistuvia rasituksia ja valita oikeat materiaalit.'
       },
       {
         type: 'gallery',
@@ -751,7 +841,7 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'TVC (Thrust Vector Control) -raketti on edistyneempi versio perinteisestä aerodynaamisesti siivekkeillä vakautetusta raketista. Se toimii samalla tavalla kuin isommatkin kiertoradalle yltävät avaruusraketit. Raketin moottori on gimbaloitu kahdella servolla, joita ohjaa PID-säädin Arduino-ohjainkortilla, joka saa asentotietoa IMU:lta (Inertial Measurement Unit).<br><br>Lisäksi raketissa on servolla toimiva avausmekanismi laskuvarjolle. Laskuvarjon avausta varten korkeustieto mitataan barometriltä, joten laskuvarjon avaus tapahtuu juuri kun raketti lähtee tippumaan alaspäin. Raketin asento ja korkeustiedot lennon ajalta tallennetaan microSD-kortille. '
+        content: 'TVC (Thrust Vector Control) -raketti on edistyneempi versio perinteisestä aerodynaamisesti siivekkeillä vakautetusta raketista. Se toimii samalla tavalla kuin isommatkin kiertoradalle lentävät avaruusraketit. Raketin moottori on gimbaloitu kahdella servolla, joita ohjaa PID-säädin Arduino-ohjainkortilla, joka saa asentotietoa IMU:lta (Inertial Measurement Unit).<br><br>Lisäksi raketissa on servolla toimiva avausmekanismi laskuvarjolle. Laskuvarjon avausta varten korkeustieto mitataan barometriltä, joten laskuvarjon avaus tapahtuu juuri kun raketti lähtee tippumaan alaspäin. Raketin asento ja korkeustiedot lennon ajalta tallennetaan microSD-kortille. '
       },
       {
         type: 'image',
@@ -1037,7 +1127,7 @@ const projectDetails = {
     description: '',
     details: '',
     technologies: ['Elektroniikka', '3D-tulostus', 'GPS', 'FPV-videolinkki', 'Radio-ohjaus'],
-    year: '2024 - 2025',
+    year: '2024 - 2026',
     contentSections: [
       {
         type: 'text',
@@ -1188,7 +1278,7 @@ const projectDetails = {
       },
       {
         type: 'text',
-        content: 'Signaali vastaanotetaan SDR#-ohjelmalla ja siirretään tietokoneen sisäisesti audiona WXtoImg-ohjelmaan, joka muuntaa signaalin kuvaksi ja tekee siihen lisäkäsittelyä, kuten lisää valtioiden rajoja ja kohdistaa kuvan kalibrointimerkkien perusteella. Äänen siirtämiseen käytin VB-Cable-ohjelmaa, joka toimii virtuaalisena audiokaapelina.'
+        content: 'Signaali vastaanotetaan SDR#-ohjelmalla ja siirretään tietokoneen sisäisesti audiosignaalina WXtoImg-ohjelmaan, joka muuntaa signaalin kuvaksi ja tekee siihen lisäkäsittelyä, kuten lisää valtioiden rajoja ja kohdistaa kuvan kalibrointimerkkien perusteella. Äänen siirtämiseen käytin VB-Cable-ohjelmaa, joka toimii virtuaalisena audiokaapelina.'
       },
       {
         type: 'image',
@@ -1255,7 +1345,7 @@ const projectDetails = {
     contentSections: [
       {
         type: 'text',
-        content: 'Tein uudet jalkatasot sähköyksipyöräiseen paremmilla ominaisuuksilla. Tavoitteena oli saada parantaa ajomukavuutta lisäämällä jalkatason kokoa ja kitkaa tason ja kengän välillä. Kasvatin myös jalkatason kulmaa 5.5 asteesta 7 asteen kulmaan, jonka avulla jalat pysyvät niiden päällä paremmin. Suunnittelin pedaalin CADillä ja tein kaksi muovista prototyyppiä. Tilasin jalkatasot konepajalta CNC-koneistettuna.<br><br>Suunnittelu alkoi 3D-mallintamalla pyörän kiinnitysosat joihin jalkatasot kiinnittyvät:'
+        content: 'Tein uudet jalkatasot sähköyksipyöräiseen paremmilla ominaisuuksilla. Tavoitteena oli parantaa ajomukavuutta lisäämällä jalkatason kokoa ja kitkaa tason ja kengän välillä. Kasvatin myös jalkatason kulmaa 5,5:stä asteesta 7:n asteen kulmaan, jonka avulla jalat pysyvät niiden päällä paremmin. Suunnittelin pedaalin CADillä ja tein kaksi muovista prototyyppiä. Tilasin jalkatasot konepajalta CNC-koneistettuna.<br><br>Suunnittelu alkoi 3D-mallintamalla pyörän kiinnitysosat joihin jalkatasot kiinnittyvät:'
       },
       {
         type: 'image',
